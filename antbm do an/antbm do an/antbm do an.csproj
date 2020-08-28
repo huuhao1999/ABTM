@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>antbm_do_an</RootNamespace>
     <AssemblyName>antbm do an</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BacSi.cs" />
     <Compile Include="Choose Priv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +72,18 @@
     </Compile>
     <Compile Include="ChucNang.Designer.cs">
       <DependentUpon>ChucNang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBacSi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBacSi.Designer.cs">
+      <DependentUpon>FormBacSi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBanThuoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBanThuoc.Designer.cs">
+      <DependentUpon>FormBanThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="f_Admin.cs">
       <SubType>Form</SubType>
@@ -98,6 +112,12 @@
     <EmbeddedResource Include="ChucNang.resx">
       <DependentUpon>ChucNang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormBacSi.resx">
+      <DependentUpon>FormBacSi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBanThuoc.resx">
+      <DependentUpon>FormBanThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="f_Admin.resx">
       <DependentUpon>f_Admin.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +132,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

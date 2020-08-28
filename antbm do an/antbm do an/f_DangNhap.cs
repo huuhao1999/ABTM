@@ -24,6 +24,7 @@ namespace antbm_do_an
             try
             {
                 string username = f_DangNhap_Username_textbox.Text;
+                username=username.ToLower();
                 string password = f_DangNhap_Password_textbox.Text;
                 //Oracle db = new Oracle();
                 //MainForm = new ChucNang_form();
@@ -31,8 +32,23 @@ namespace antbm_do_an
                 LogedIn_Username = username;
                 //MainForm.username = f_DangNhap_Username_textbox.Text;
                 MessageBox.Show("Da dang nhap voi username:" +username);
-                ChucNang_form MainFrom = new ChucNang_form(this);
-                MainFrom.Show();
+                if (username.StartsWith("sy") == true)
+                {
+                    ChucNang_form MainFrom = new ChucNang_form(this);
+                    MainFrom.Show();
+                }
+                if (username.StartsWith("bs") == true)
+                {
+                    FormBacSi bacsi = new FormBacSi(this);
+                    bacsi.Show();
+                }
+                if (username.StartsWith("bt") == true)
+                {
+                    FormBanThuoc bt = new FormBanThuoc();
+                    bt.Show();
+                }
+                
+               
                 this.Hide();
             }
             catch(Exception er)
