@@ -69,11 +69,8 @@ namespace antbm_do_an
 
             // Select
             DataTable ret = Oracle.GetAllPriv(Login_Form.conn, role);
-            Priv_Preprocessing(ret);
+            //Priv_Preprocessing(ret);
             Select_User_dataGridView1.DataSource = ret;
-
-
-
         }
 
         private void test_button_Click(object sender, EventArgs e)

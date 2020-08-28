@@ -718,11 +718,11 @@ END;
 
 BEGIN
 dbms_rls.Add_policy(object_schema => 'DBA_USER',
-                    object_name => 'BENH_NHAN_BAC_SI_VIEW',
+                    object_name => 'BENH_NHAN',
                     policy_name => 'BACSI_BENHNHAN_VPD',
                     function_schema => 'DBA_USER',
                     policy_function => 'FUNC_BENH_NHAN_BACSI',
-                    statement_types => 'SELECT,UPDATE',
+                    statement_types => 'UPDATE',
                     update_check => TRUE );
 END;
 /
@@ -1856,6 +1856,18 @@ BEGIN
 END;
 /
 
+
+---------------------------------------------------------------------------------------- BO SUNG VPD ----------------------------------------------------------------------------
+BEGIN
+dbms_rls.Add_policy(object_schema => 'DBA_USER',
+                    object_name => 'BENH_NHAN_BAC_SI_VIEW',
+                    policy_name => 'BACSI_BENHNHAN_VIEW_VPD',
+                    function_schema => 'DBA_USER',
+                    policy_function => 'FUNC_BENH_NHAN_BACSI',
+                    statement_types => 'SELECT');
+END;
+/
+
 DISCONNECT;
 -- CHAY XONG TH?Y QUERY RESULT KHONG RA ROWLABEL NULL THI CHAY LAI DOAN TU 879->1668
 
@@ -1949,15 +1961,3 @@ DISCONNECT;
 --    SET_EMP_ENV.SET_JOB_POSITION;
 --END;
 --/
-
-select * from THUOC;
-select * from DONTHUOC;
-select * from DANH_SACH_DON_THUOC;
-select * from DICH_VU_KHAM_BENH;
-select * from DANH_SACH_SU_DUNG_DICH_VU;
-select * from BENH_NHAN;
-select * from DIEU_TRI;
-select * from PHONG_BAN;
-select * from NHANVIEN;
-select * from TRUC_PHONG_KHAM;
-select * from ENCRYPTED_LUONG;
