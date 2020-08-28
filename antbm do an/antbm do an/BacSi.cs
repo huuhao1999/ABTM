@@ -30,6 +30,26 @@ namespace antbm_do_an
             conn.ConnectionString = a;
             return conn;
         }
+        public DataTable getthongtinbenhnhan(OracleConnection conn)
+        {
+            string sql = "select* from DBA_USER.BENH_NHAN"; // select ra nhugn74 user được người dùng tạo ra
+
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+
+            return temp;
+        }
+        public void updatebenhnhan(OracleConnection conn, string mabn,string tenbn, string namsinh, string diachi, string sdt, string trieuchungbenh)
+        {
+           // string sql = "UPDATE DBA_USER.BENH_NHAN SET namsinh ="+namsinh+",diachilienlac='"+diachi+"',ten='"+tenbn+ "',sdt="+sdt+ ",trieuchungbenh='"+trieuchungbenh+  "' WHERE MABENHNHAN="+mabn+";";
+            string sql = "UPDATE DBA_USER.BENH_NHAN SET TEN='Haoooo' WHERE MABENHNHAN=1;";
+            Console.WriteLine(sql);
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+           
+        }
         public static List<string> getdieutri(OracleConnection conn)
         {
             string sql = "select * from DBA_USER.DIEU_TRI;"; // select ra nhugn74 user được người dùng tạo ra

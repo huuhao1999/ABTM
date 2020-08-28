@@ -31,6 +31,8 @@ namespace antbm_do_an
             conn.ConnectionString = connString;
             return conn;
         }
+
+        
         public static List<string> GetAllUsers(OracleConnection conn)
         {
             string sql = "SELECT USERNAME FROM all_users WHERE COMMON = 'NO'"; // select ra nhugn74 user được người dùng tạo ra
@@ -47,7 +49,6 @@ namespace antbm_do_an
             }
             return ret;
         }
-
         public static List<string> GetAllRoles(OracleConnection conn)
         {
             string sql = "SELECT ROLE FROM dba_roles where COMMON = 'NO'"; // select ra những role được người dùng tạo ra

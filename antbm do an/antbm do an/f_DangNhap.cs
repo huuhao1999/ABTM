@@ -41,8 +41,16 @@ namespace antbm_do_an
                 if (username.StartsWith("bs") == true)
                 {
                     conn = BacSi.CreateDBConnection(username, password);
-                    FormBacSi bacsi = new FormBacSi(this);
-                    bacsi.Show();
+                    try
+                    {
+                        conn.Open();
+                        FormBacSi bacsi = new FormBacSi(this);
+                        bacsi.Show();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Tải khoản hoặc mật khẩu không đúng");
+                    }
                 }
                 if (username.StartsWith("bt") == true)
                 {
@@ -73,6 +81,11 @@ namespace antbm_do_an
             {
                 MessageBox.Show("Error: " + er);
             }
+        }
+
+        private void f_DangNhap_Username_textbox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
