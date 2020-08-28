@@ -28,17 +28,19 @@ namespace antbm_do_an
                 string password = f_DangNhap_Password_textbox.Text;
                 //Oracle db = new Oracle();
                 //MainForm = new ChucNang_form();
-                conn = Oracle.CreateDBConnection(username, password);
+                
                 LogedIn_Username = username;
                 //MainForm.username = f_DangNhap_Username_textbox.Text;
                 MessageBox.Show("Da dang nhap voi username:" +username);
-                if (username.StartsWith("sy") == true)
+                if (username.StartsWith("sy") == true || username.StartsWith("dpa") == true)
                 {
+                    conn = Oracle.CreateDBConnection(username, password);
                     ChucNang_form MainFrom = new ChucNang_form(this);
                     MainFrom.Show();
                 }
                 if (username.StartsWith("bs") == true)
                 {
+                    conn = BacSi.CreateDBConnection(username, password);
                     FormBacSi bacsi = new FormBacSi(this);
                     bacsi.Show();
                 }

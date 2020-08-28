@@ -31,23 +31,6 @@ namespace antbm_do_an
             conn.ConnectionString = connString;
             return conn;
         }
-        public static List<string> getdieutri(OracleConnection conn)
-        {
-            string sql = "select * from DBA_USER.DIEU_TRI;"; // select ra nhugn74 user được người dùng tạo ra
-
-            OracleCommand cmd = new OracleCommand(sql, conn);
-            OracleDataAdapter DA = new OracleDataAdapter(cmd);
-            DataTable temp = new DataTable();
-            DA.Fill(temp);
-
-            List<string> ret = new List<string>();
-            foreach (DataRow dr in temp.Rows)
-            {
-                ret.Add(dr["USERNAME"].ToString());
-                Console.WriteLine(dr["THOIGIANKHAM"].ToString());
-            }
-            return ret;
-        }
         public static List<string> GetAllUsers(OracleConnection conn)
         {
             string sql = "SELECT USERNAME FROM all_users WHERE COMMON = 'NO'"; // select ra nhugn74 user được người dùng tạo ra
