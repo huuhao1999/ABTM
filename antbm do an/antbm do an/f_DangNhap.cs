@@ -69,7 +69,7 @@ namespace antbm_do_an
                         conn.Open();
                         FormQuanLiTaiVu f_qltv = new FormQuanLiTaiVu(this);
                         f_qltv.Show();
-                        this.Hide();
+                        //this.Hide();
                     }
                     catch (Exception ex)
                     {

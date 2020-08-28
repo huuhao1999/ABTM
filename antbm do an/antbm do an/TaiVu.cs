@@ -28,20 +28,121 @@ namespace antbm_do_an
         }
         public static DataTable getThuoc(OracleConnection conn)
         {
-            string sql = "SELECT * FROM DBA_USER.THUOC;";
+            string sql = "SELECT * FROM DBA_USER.THUOC";
             OracleCommand cmd = new OracleCommand(sql, conn);
             OracleDataAdapter DA = new OracleDataAdapter(cmd);
             DataTable temp = new DataTable();
             DA.Fill(temp);
             return temp;
         }
-        public static void updateThuoc(OracleConnection conn)
+
+        public static DataTable getBenhNhan(OracleConnection conn)
         {
-            string sql = "UPDATE DBA_USER.THUOC SET TENTHUOC = 'hahaha' WHERE MATHUOC = 1;";
+            string sql = "SELECT * FROM DBA_USER.BENH_NHAN";
             OracleCommand cmd = new OracleCommand(sql, conn);
-            cmd.ExecuteNonQuery();
-            //OracleDataAdapter DA = new OracleDataAdapter(cmd);
-            Console.WriteLine(sql);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
+        public static DataTable getDonThuoc(OracleConnection conn)
+        {
+            string sql = "SELECT * FROM DBA_USER.DONTHUOC";
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
+        public static DataTable getDSDonThuoc(OracleConnection conn)
+        {
+            string sql = "SELECT * FROM DBA_USER.DANH_SACH_DON_THUOC";
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
+        public static DataTable getDVKhamBenh(OracleConnection conn)
+        {
+            string sql = "SELECT * FROM DBA_USER.DICH_VU_KHAM_BENH";
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
+        public static DataTable getDSDungDV(OracleConnection conn)
+        {
+            string sql = "SELECT * FROM DBA_USER.DANH_SACH_SU_DUNG_DICH_VU";
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
+        public static DataTable getDieuTri(OracleConnection conn)
+        {
+            string sql = "SELECT * FROM DBA_USER.DIEU_TRI";
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
+        public static DataTable getNhanVien(OracleConnection conn)
+        {
+            string sql = "SELECT * FROM DBA_USER.NHANVIEN";
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
+        public static DataTable getPhongBan(OracleConnection conn)
+        {
+            string sql = "SELECT * FROM DBA_USER.PHONG_BAN";
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
+        public static DataTable getTrucPhongKham(OracleConnection conn)
+        {
+            string sql = "SELECT * FROM DBA_USER.TRUC_PHONG_KHAM";
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
+        public static DataTable getLuong(OracleConnection conn)
+        {
+            string sql = "SELECT * FROM DBA_USER.ENCRYPTED_LUONG";
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
+        public static DataTable getCuocHop(OracleConnection conn)
+        {
+            string sql = "SELECT * FROM DBA_USER.CUOC_HOP";
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
+        public static void runSQL(OracleConnection conn, string sql)
+        {
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) { };
         }
 
     }

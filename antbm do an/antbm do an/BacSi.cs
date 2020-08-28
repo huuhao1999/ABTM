@@ -44,7 +44,7 @@ namespace antbm_do_an
         public void updatebenhnhan(OracleConnection conn, string mabn,string tenbn, string namsinh, string diachi, string sdt, string trieuchungbenh)
         {
            // string sql = "UPDATE DBA_USER.BENH_NHAN SET namsinh ="+namsinh+",diachilienlac='"+diachi+"',ten='"+tenbn+ "',sdt="+sdt+ ",trieuchungbenh='"+trieuchungbenh+  "' WHERE MABENHNHAN="+mabn+";";
-            string sql = "UPDATE DBA_USER.BENH_NHAN SET TEN='Haoooo' WHERE MABENHNHAN=1;";
+            string sql = "UPDATE DBA_USER.BENH_NHAN SET TEN='Haoooo' WHERE MABENHNHAN=1";
             Console.WriteLine(sql);
             OracleCommand cmd = new OracleCommand(sql, conn);
             cmd.ExecuteNonQuery();
