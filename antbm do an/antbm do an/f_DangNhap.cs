@@ -31,7 +31,7 @@ namespace antbm_do_an
                 
                 LogedIn_Username = username;
                 //MainForm.username = f_DangNhap_Username_textbox.Text;
-                MessageBox.Show("Da dang nhap voi username:" +username);
+                //MessageBox.Show("Da dang nhap voi username:" +username);
                 if (username.StartsWith("sy") == true || username.StartsWith("dpa") == true)
                 {
                     conn = Oracle.CreateDBConnection(username, password);
@@ -49,9 +49,25 @@ namespace antbm_do_an
                     FormBanThuoc bt = new FormBanThuoc();
                     bt.Show();
                 }
-                
-               
-                this.Hide();
+                if (username.StartsWith("tv") == true)
+                {
+                    this.Hide();
+                }
+                if (username.StartsWith("ql002") == true)
+                {
+                    conn = TaiVu.CreateDBConnection(username, password);
+                    try
+                    {
+                        conn.Open();
+                        FormQuanLiTaiVu f_qltv = new FormQuanLiTaiVu(this);
+                        f_qltv.Show();
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Đăng nhập thất bại!");
+                    }
+                }
             }
             catch(Exception er)
             {

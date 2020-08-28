@@ -48,6 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormQuanLiTaiVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLiTaiVu.Designer.cs">
+      <DependentUpon>FormQuanLiTaiVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaiVu.cs" />
     <Compile Include="BacSi.cs" />
     <Compile Include="Choose Priv.cs">
       <SubType>Form</SubType>
@@ -117,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBanThuoc.resx">
       <DependentUpon>FormBanThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQuanLiTaiVu.resx">
+      <DependentUpon>FormQuanLiTaiVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f_Admin.resx">
       <DependentUpon>f_Admin.cs</DependentUpon>
