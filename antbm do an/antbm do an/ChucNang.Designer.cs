@@ -46,11 +46,6 @@
             this.user_comboBox = new System.Windows.Forms.ComboBox();
             this.role_comboBox = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Object_dataGridView = new System.Windows.Forms.DataGridView();
-            this.Type_comboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.CHON_TYPE_button = new System.Windows.Forms.Button();
-            this.CREATE_button = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -59,19 +54,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.Select_User_dataGridView)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.RoleGrantedToUser_dataGridView)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Object_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 54);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(660, 464);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
@@ -91,7 +83,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(652, 438);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "PHAN QUYEN";
+            this.tabPage1.Text = "Admin";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // NAME_label
@@ -241,72 +233,19 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.CREATE_button);
-            this.tabPage2.Controls.Add(this.CHON_TYPE_button);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.Type_comboBox);
-            this.tabPage2.Controls.Add(this.Object_dataGridView);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(652, 438);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "SELECT OBJECT";
+            this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // Object_dataGridView
-            // 
-            this.Object_dataGridView.AllowUserToAddRows = false;
-            this.Object_dataGridView.AllowUserToDeleteRows = false;
-            this.Object_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Object_dataGridView.Location = new System.Drawing.Point(6, 60);
-            this.Object_dataGridView.Name = "Object_dataGridView";
-            this.Object_dataGridView.ReadOnly = true;
-            this.Object_dataGridView.Size = new System.Drawing.Size(640, 372);
-            this.Object_dataGridView.TabIndex = 0;
-            // 
-            // Type_comboBox
-            // 
-            this.Type_comboBox.FormattingEnabled = true;
-            this.Type_comboBox.Location = new System.Drawing.Point(6, 33);
-            this.Type_comboBox.Name = "Type_comboBox";
-            this.Type_comboBox.Size = new System.Drawing.Size(469, 21);
-            this.Type_comboBox.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "OBJECT TYPE";
-            // 
-            // CHON_TYPE_button
-            // 
-            this.CHON_TYPE_button.Location = new System.Drawing.Point(481, 31);
-            this.CHON_TYPE_button.Name = "CHON_TYPE_button";
-            this.CHON_TYPE_button.Size = new System.Drawing.Size(165, 23);
-            this.CHON_TYPE_button.TabIndex = 3;
-            this.CHON_TYPE_button.Text = "CHỌN TYPE";
-            this.CHON_TYPE_button.UseVisualStyleBackColor = true;
-            this.CHON_TYPE_button.Click += new System.EventHandler(this.CHON_TYPE_button_Click);
-            // 
-            // CREATE_button
-            // 
-            this.CREATE_button.Location = new System.Drawing.Point(481, 3);
-            this.CREATE_button.Name = "CREATE_button";
-            this.CREATE_button.Size = new System.Drawing.Size(165, 23);
-            this.CREATE_button.TabIndex = 4;
-            this.CREATE_button.Text = "CREATE USER/ROLE";
-            this.CREATE_button.UseVisualStyleBackColor = true;
-            this.CREATE_button.Click += new System.EventHandler(this.button2_Click);
             // 
             // ChucNang_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 481);
+            this.ClientSize = new System.Drawing.Size(686, 530);
             this.Controls.Add(this.tabControl1);
             this.Name = "ChucNang_form";
             this.Text = "Chuc Nang";
@@ -319,9 +258,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Select_User_dataGridView)).EndInit();
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.RoleGrantedToUser_dataGridView)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Object_dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -346,10 +282,5 @@
         private System.Windows.Forms.DataGridView Select_User_dataGridView;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.DataGridView RoleGrantedToUser_dataGridView;
-        private System.Windows.Forms.Button CHON_TYPE_button;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox Type_comboBox;
-        private System.Windows.Forms.DataGridView Object_dataGridView;
-        private System.Windows.Forms.Button CREATE_button;
     }
 }

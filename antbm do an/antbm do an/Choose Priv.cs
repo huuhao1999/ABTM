@@ -170,18 +170,9 @@ namespace antbm_do_an
             // KHỞI TẠO RA STRING GỒM CÁC CỘT ĐỂ ĐƯỢC GRANT
             foreach (DataRow dr in temp.Rows)
             {
-                if (Convert.ToBoolean(dr["ENABLED"]))
-                {
-                    // NẾU CHỌN VÀO NHỮNG CỘT BỊ MÃ HÓA THÌ THỰC HIỆN NGƯNG QUI TRÌNH VÀ HIỆN LỖI
-                    if ((dr["COLUMN_NAME"].ToString().ToUpper() == "LUONG" || dr["COLUMN_NAME"].ToString().ToUpper() == "PHUCAP") && this.Table_name == "LUONG")
-                    {
-                        MessageBox.Show("CỘT " + dr["COLUMN_NAME"].ToString().ToUpper() + "ĐÃ ĐƯỢC MÃ HÓA, KHÔNG ĐƯỢC PHÉP ADD QUYỀN SELECT QUA APP!!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    Grant_select_No_GrantOption_str += dr["COLUMN_NAME"].ToString() + ',';
-                    if (Convert.ToBoolean(dr["WITH GRANT OPTION"]))
-                        Grant_select_WithGrantOption_str += dr["COLUMN_NAME"].ToString() + ',';
-                }
+                Grant_select_No_GrantOption_str += dr["COLUMN_NAME"].ToString() + ',';
+                if (Convert.ToBoolean(dr["WITH GRANT OPTION"]))
+                    Grant_select_WithGrantOption_str += dr["COLUMN_NAME"].ToString() + ',';
             }
                 // BỎ KÍ TỰ ',' DƯ
                 Grant_select_No_GrantOption_str = Grant_select_No_GrantOption_str.Remove(Grant_select_No_GrantOption_str.Length - 1, 1);
@@ -203,24 +194,13 @@ namespace antbm_do_an
         private void Update_Grant()
         {
             MainForm.Login_Form.conn.Open();
+            
             DataTable temp = (DataTable)Priv_dataGridView.DataSource;
-            // CHECK XEM CÓ CỘT NÀO THUỘC DẠNG EXCEPTION KHÔNG, NẾU CÓ BÁO ERROR (DO CHƯA CÓ CÁCH XỬ LÍ)
-            foreach (DataRow dr in temp.Rows)
-            {
-                if ((dr["COLUMN_NAME"].ToString().ToUpper() == "LUONG" || dr["COLUMN_NAME"].ToString().ToUpper() == "PHUCAP") && this.Table_name == "LUONG")
-                {
-                    MessageBox.Show("CỘT " + dr["COLUMN_NAME"].ToString().ToUpper() + "ĐÃ ĐƯỢC MÃ HÓA, KHÔNG ĐƯỢC PHÉP ADD QUYỀN SELECT QUA APP!!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-
-
             Oracle.revoke_priv(MainForm.Login_Form.conn, Table_name, MainForm.username, "UPDATE");
             foreach (DataRow dr in temp.Rows)
             {
                 if (Convert.ToBoolean(dr["ENABLED"]))
                 {
-
                     if (Convert.ToBoolean(dr["WITH GRANT OPTION"]))
                         Oracle.Grant_Update(MainForm.Login_Form.conn, dr["COLUMN_NAME"].ToString(), Table_name, MainForm.username, true);
                     else
@@ -232,18 +212,8 @@ namespace antbm_do_an
         private void Insert_Grant()
         {
             DataTable temp = (DataTable)Priv_dataGridView.DataSource;
-
-            // CHECK XEM CÓ BẢNG NÀO THUỘC DẠNG EXCEPTION KHÔNG, NẾU CÓ BÁO ERROR (DO CHƯA CÓ CÁCH XỬ LÍ)
-            foreach (DataRow dr in temp.Rows)
-            {
-                if (Convert.ToBoolean(dr["ENABLED"]) && dr["TABLE_NAME"].ToString() == "LUONG")
-                {
-                    MessageBox.Show("BANG " + dr["TABLE_NAME"].ToString().ToUpper() + "ĐÃ ĐƯỢC MÃ HÓA, KHÔNG ĐƯỢC PHÉP ADD QUYỀN SELECT QUA APP!!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-
-            foreach (DataRow dr in temp.Rows)
+            
+            foreach(DataRow dr in temp.Rows)
             {
                 string table_name = dr["OWNER"].ToString() + "." + dr["TABLE_NAME"].ToString();
                 Oracle.revoke_priv(MainForm.Login_Form.conn, table_name, MainForm.username, "INSERT");
@@ -265,16 +235,6 @@ namespace antbm_do_an
         private void Delete_Grant()
         {
             DataTable temp = (DataTable)Priv_dataGridView.DataSource;
-
-            // CHECK XEM CÓ BẢNG NÀO THUỘC DẠNG EXCEPTION KHÔNG, NẾU CÓ BÁO ERROR (DO CHƯA CÓ CÁCH XỬ LÍ)
-            foreach (DataRow dr in temp.Rows)
-            {
-                if (Convert.ToBoolean(dr["ENABLED"]) && dr["TABLE_NAME"].ToString() == "LUONG")
-                {
-                    MessageBox.Show("BANG " + dr["TABLE_NAME"].ToString().ToUpper() + "ĐÃ ĐƯỢC MÃ HÓA, KHÔNG ĐƯỢC PHÉP ADD QUYỀN SELECT QUA APP!!", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
 
             foreach (DataRow dr in temp.Rows)
             {

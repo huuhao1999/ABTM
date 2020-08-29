@@ -32,9 +32,9 @@ namespace antbm_do_an
                 LogedIn_Username = username;
                 //MainForm.username = f_DangNhap_Username_textbox.Text;
                 //MessageBox.Show("Da dang nhap voi username:" +username);
-                if (username.StartsWith("sy") == true || username.StartsWith("dba") == true)
+                if (username.StartsWith("sy") == true || username.StartsWith("dpa") == true)
                 {
-                    conn = Oracle.CreateDBConnection("DBA_USER", "123");
+                    conn = Oracle.CreateDBConnection(username, password);
                     ChucNang_form MainFrom = new ChucNang_form(this);
                     MainFrom.Show();
                 }
@@ -54,8 +54,16 @@ namespace antbm_do_an
                 }
                 if (username.StartsWith("bt") == true)
                 {
-                    FormBanThuoc bt = new FormBanThuoc();
+                    conn = BacSi.CreateDBConnection(username, password);
+                    try
+                    {
+                    FormBanThuoc bt = new FormBanThuoc(this);
                     bt.Show();
+                                        }
+                    catch
+                    {
+                        MessageBox.Show("Tải khoản hoặc mật khẩu không đúng");
+                    }
                 }
                 if (username.StartsWith("tv") == true)
                 {
@@ -84,6 +92,16 @@ namespace antbm_do_an
         }
 
         private void f_DangNhap_Username_textbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void f_DangNhap_Load(object sender, EventArgs e)
         {
 
         }
