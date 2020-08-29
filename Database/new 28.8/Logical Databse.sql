@@ -824,8 +824,8 @@ END;
 
 
 ------------------------------------------------------------------------ CAU 3 ------------------------------------------------------------------------
--- BOI CANH: BENH VIEN TACH RA 1 CHI NHANH KHAC O QUAN 10 VA 1/2 NHAN VIEN PHAI SANG DO LAM VIEC. NGOï¿½I RA BENH VIEN Cï¿½ NHU CAU LUU LAI Cï¿½C CUOC HOP CUA Cï¿½C NHï¿½N VIï¿½N VA NHUNG THï¿½NG TIN CUA CUOC HOP CUA QUï¿½N Lï¿½ 
--- THï¿½ NHï¿½N VIï¿½N KHï¿½NG DUOCC QUYEN NHï¿½N THAY, NGOï¿½I RA Cï¿½C NHï¿½N VIï¿½N CHI DUOC XEM THï¿½NG TIN NHUNG CUOC HOP THUOC PHï¿½NG BAN CUA Mï¿½NH Vï¿½ THUOC CHI NHï¿½NH CUA Mï¿½NH
+-- BOI CANH: BENH VIEN TACH RA 1 CHI NHANH KHAC O QUAN 10 VA 1/2 NHAN VIEN PHAI SANG DO LAM VIEC. NGOÀI RA BENH VIEN CÓ NHU CAU LUU LAI CÁC CUOC HOP CUA CÁC NHÂN VIÊN VA NHUNG THÔNG TIN CUA CUOC HOP CUA QUÁN LÍ 
+-- THÌ NHÂN VIÊN KHÔNG DUOCC QUYEN NHÌN THAY, NGOÀI RA CÁC NHÂN VIÊN CHI DUOC XEM THÔNG TIN NHUNG CUOC HOP THUOC PHÒNG BAN CUA MÌNH VÀ THUOC CHI NHÁNH CUA MÌNH
 
 CREATE TABLE CUOC_HOP 
 (
@@ -897,7 +897,7 @@ BEGIN
 END;
 /
 -- KHI POLICY DUOC TAO THI SE CO 1 ROLE VOI FORMAT [POLICY_NAME]_DBA DUOC TAO RA
--- DOAN CODE Nï¿½Y Nï¿½N LOG IN Vï¿½O SQL PLUS BANG ACCOUNT LBACSYS/"123" Vï¿½ CHï¿½P DOAN CODE GRANT DUOI DOAN COMMENT Nï¿½Y DE DBA_USER Cï¿½ DUOC NHUNG QUYEN CAN THIET
+-- DOAN CODE NÀY NÊN LOG IN VÀO SQL PLUS BANG ACCOUNT LBACSYS/"123" VÀ CHÉP DOAN CODE GRANT DUOI DOAN COMMENT NÀY DE DBA_USER CÓ DUOC NHUNG QUYEN CAN THIET
 GRANT HOP_OLS_DBA TO DBA_USER;
 GRANT EXECUTE ON sa_components TO DBA_USER;
 GRANT EXECUTE ON sa_label_admin TO DBA_USER;
@@ -1380,7 +1380,7 @@ END;
 /
 
 --------------------------------------
--- ï¿½P D?NG CHï¿½NH Sï¿½CH
+-- ÁP D?NG CHÍNH SÁCH
 --------------------------------------
 
 --- DROP FIRST
@@ -1410,7 +1410,7 @@ END;
 /
 
 -------------------------------------------------------------
------ Gï¿½N NHï¿½N CHO TUNG Dï¿½NG DU LIEU BANG Cï¿½U UPDATE --------
+----- GÁN NHÃN CHO TUNG DÒNG DU LIEU BANG CÂU UPDATE --------
 -------------------------------------------------------------
 
 UPDATE DBA_USER.CUOC_HOP
@@ -1499,7 +1499,7 @@ SELECT MAHOP, NOIDUNGHOP, LABEL_TO_CHAR(ROWLABEL) FROM DBA_USER.CUOC_HOP;
 --WHERE MAHOP = 21;
 
 -------------------------------------------------------------
------ Gï¿½N NHï¿½N CHO Cï¿½C USER ---------------------------------
+----- GÁN NHÃN CHO CÁC USER ---------------------------------
 -------------------------------------------------------------
 -- QUAN LI 1
 BEGIN
@@ -1644,7 +1644,7 @@ BEGIN
 END;
 /
 
---- DOI OPTION TABLE CONTROL THï¿½NH READ - CONTROL
+--- DOI OPTION TABLE CONTROL THÀNH READ - CONTROL
 BEGIN 
     SA_POLICY_ADMIN.REMOVE_TABLE_POLICY -- DROP COLUMN DEFAULT = FALSE
     (
@@ -1666,16 +1666,14 @@ BEGIN
 END;
 /
 
-
 DISCONNECT;
-DROP TABLE DBA_USER.TABLE_NAY_CHA_DE_LAM_GI_CA;
--------------------------------------------------------------------------- Cï¿½U 2 ---------------------------------------------------------------------------------------
+-------------------------------------------------------------------------- CÂU 2 ---------------------------------------------------------------------------------------
 -- MA HOA
 ------------------------------------------------
 CONN DBA_USER/"123";
 ------ CAN MA HOA COT LUONG VA SO NGAY CONG CUA NHAN VIEN
 ------ KHOA DUOC LUU TRONG 1 BANG 
-drop table TABLE_NAY_CHA_DE_LAM_GI_CA;
+
 CREATE TABLE TABLE_NAY_CHA_DE_LAM_GI_CA
 (
     THUOC_TINH_DUMMY varchar2(100) NOT NULL
