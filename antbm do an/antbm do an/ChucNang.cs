@@ -23,9 +23,10 @@ namespace antbm_do_an
           
             Login_Form = form;
             InitializeComponent();
-            GetUsers();
-            GetRoles();
-            GetObjectType();
+      
+                GetUsers();
+                GetRoles();
+           
             RoleTab = tabControl2.TabPages[1];
         }
 
@@ -36,10 +37,6 @@ namespace antbm_do_an
         private void GetRoles()
         {
             role_comboBox.DataSource = Oracle.GetAllRoles(Login_Form.conn);
-        }
-        private void GetObjectType()
-        {
-            Type_comboBox.DataSource = Oracle.Get_object_type(Login_Form.conn);
         }
 
         private void ChonUser_button_Click(object sender, EventArgs e)
@@ -72,8 +69,11 @@ namespace antbm_do_an
 
             // Select
             DataTable ret = Oracle.GetAllPriv(Login_Form.conn, role);
-            //Priv_Preprocessing(ret);
+            Priv_Preprocessing(ret);
             Select_User_dataGridView1.DataSource = ret;
+
+
+
         }
 
         private void test_button_Click(object sender, EventArgs e)
@@ -95,10 +95,7 @@ namespace antbm_do_an
             Choose_Priv_Type Chon_Priv_type = new Choose_Priv_Type(this);
             Chon_Priv_type.Show();
         }
-        private void CHON_TYPE_button_Click(object sender, EventArgs e)
-        {
-            Object_dataGridView.DataSource = Oracle.Get_Object(Login_Form.conn, Type_comboBox.Text);
-        }
+
         private DataTable Get_Revoke_Grant_Priv(DataTable Goc,DataTable Sua_Doi)
         {
             DataTable temp_Goc = Goc.Copy();
@@ -305,11 +302,7 @@ namespace antbm_do_an
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            FormCreateUserRole temp = new FormCreateUserRole(this);
-            temp.Show();
-        }
+
     }
 
 

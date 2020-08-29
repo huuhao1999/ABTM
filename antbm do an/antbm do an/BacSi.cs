@@ -32,7 +32,7 @@ namespace antbm_do_an
         }
         public DataTable getthongtinbenhnhan(OracleConnection conn)
         {
-            string sql = "select* from DBA_USER.BENH_NHAN"; // select ra nhugn74 user được người dùng tạo ra
+            string sql = "select* from DBA_USER.BENH_NHAN_BAC_SI_VIEW"; // select ra nhugn74 user được người dùng tạo ra
 
             OracleCommand cmd = new OracleCommand(sql, conn);
             OracleDataAdapter DA = new OracleDataAdapter(cmd);
@@ -41,17 +41,36 @@ namespace antbm_do_an
 
             return temp;
         }
-        public void updatebenhnhan(OracleConnection conn, string mabn,string tenbn, string namsinh, string diachi, string sdt, string trieuchungbenh)
+        public DataTable getthongdonthuoc(OracleConnection conn)
         {
-           // string sql = "UPDATE DBA_USER.BENH_NHAN SET namsinh ="+namsinh+",diachilienlac='"+diachi+"',ten='"+tenbn+ "',sdt="+sdt+ ",trieuchungbenh='"+trieuchungbenh+  "' WHERE MABENHNHAN="+mabn+";";
-            string sql = "UPDATE DBA_USER.BENH_NHAN SET TEN='Trieuuuu' WHERE MABENHNHAN=1";
-  
+            string sql = "select bn.mabenhnhan, bn.ten, bn.trieuchungbenh, dsdt.mathuoc, dont.madt,dsdt.id_danhsachdonthuoc from DBA_USER.BENH_NHAN_BAC_SI_VIEW bn, DBA_USER.danh_sach_don_thuoc dsdt, DBA_USER.dieu_tri dt, DBA_USER.donthuoc dont where bn.mabenhnhan=dt.mabenhnhan and dt.id_dieutri=dont.id_dieutri and dont.madt=dsdt.madt";
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
+        public void updatebenhnhan(OracleConnection conn, string mabn, string trieuchungbenh)
+        {
+            //string sql = "UPDATE DBA_USER.BENH_NHAN SET namsinh ="+namsinh+",diachilienlac='"+diachi+"',ten='"+tenbn+ "',sdt="+sdt+ ",trieuchungbenh='"+trieuchungbenh+  "' WHERE MABENHNHAN="+mabn;
+            string sql = "UPDATE DBA_USER.BENH_NHAN SET TRIEUCHUNGBENH = '"+trieuchungbenh+"' WHERE MABENHNHAN ="+mabn+" ";
             Console.WriteLine(sql);
             OracleCommand cmd = new OracleCommand(sql, conn);
             cmd.ExecuteNonQuery();
            
+           
         }
-        public  List<string> getdieutri(OracleConnection conn)
+        public void updatedonthuoc(OracleConnection conn, string madonthuoc, string idds, string madonthuoc1, string soluong)
+        {
+            //string sql = "UPDATE DBA_USER.BENH_NHAN SET namsinh ="+namsinh+",diachilienlac='"+diachi+"',ten='"+tenbn+ "',sdt="+sdt+ ",trieuchungbenh='"+trieuchungbenh+  "' WHERE MABENHNHAN="+mabn;
+            string sql = "UPDATE DBA_USER.DANH_SACH_DON_THUOC SET MATHUOC="+madonthuoc1+" , MADT="+madonthuoc+" ,SOLUONG="+soluong+" WHERE ID_DANHSACHDONTHUOC="+idds+" ";
+            Console.WriteLine(sql);
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+           
+           
+        }
+        public static List<string> getdieutri(OracleConnection conn)
         {
             string sql = "select * from DBA_USER.DIEU_TRI;"; // select ra nhugn74 user được người dùng tạo ra
 

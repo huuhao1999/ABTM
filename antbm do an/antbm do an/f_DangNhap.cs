@@ -32,9 +32,9 @@ namespace antbm_do_an
                 LogedIn_Username = username;
                 //MainForm.username = f_DangNhap_Username_textbox.Text;
                 //MessageBox.Show("Da dang nhap voi username:" +username);
-                if (username.StartsWith("sy") == true || username.StartsWith("dba") == true)
+                if (username.StartsWith("sy") == true || username.StartsWith("dpa") == true)
                 {
-                    conn = Oracle.CreateDBConnection("DBA_USER", "123");
+                    conn = Oracle.CreateDBConnection(username, password);
                     ChucNang_form MainFrom = new ChucNang_form(this);
                     MainFrom.Show();
                 }

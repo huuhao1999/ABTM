@@ -37,9 +37,16 @@ namespace antbm_do_an
         }
         public static void updateThuoc(OracleConnection conn)
         {
-            string sql = "UPDATE DBA_USER.THUOC SET TENTHUOC = 'hahahafedf' WHERE MATHUOC = 1";
+            string sql = "UPDATE DBA_USER.THUOC SET TENTHUOC = 'hssssahaha' WHERE MATHUOC = 1";
             OracleCommand cmd = new OracleCommand(sql, conn);
-            cmd.ExecuteNonQuery();
+            //try
+            //{ 
+                cmd.ExecuteNonQuery();
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine("aaaaaaa"+ex);
+            //}
             //OracleDataAdapter DA = new OracleDataAdapter(cmd);
             Console.WriteLine(sql);
         }
