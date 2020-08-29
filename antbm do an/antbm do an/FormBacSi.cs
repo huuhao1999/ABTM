@@ -188,5 +188,64 @@ namespace antbm_do_an
             BacSi a = new BacSi();
             a.themthuocvaodonthuoc(conn);
         }
+
+        private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            int col = dataGridView2.SelectedCells[0].ColumnIndex;
+            int row = dataGridView2.SelectedCells[0].RowIndex;
+            Console.WriteLine("col:" + col);
+            Console.WriteLine("row:" + row);
+            if (col == 4)
+            {
+       
+                if (dataGridView2.Columns[col].Name.ToUpper() == "MATHUOC")
+                {
+              
+                    string mathuoc = dataGridView2.SelectedCells[0].Value.ToString();
+                    string madsdt = dataGridView2.Rows[row].Cells[0].Value.ToString();
+                    string sql = "UPDATE DBA_USER.DANH_SACH_DON_THUOC SET MATHUOC= " + mathuoc + " WHERE ID_DANHSACHDONTHUOC=" + madsdt;
+                    Console.Write(sql);
+                    BacSi.runSQL(conn, sql);
+                }
+            }
+            if (col == 5)
+            {
+          
+                if (dataGridView2.Columns[col].Name.ToUpper() == "SOLUONG")
+                {
+                    string soluong = dataGridView2.SelectedCells[0].Value.ToString();
+                    string mast = dataGridView2.Rows[row].Cells[0].Value.ToString();
+                    string sql = "UPDATE DBA_USER.DANH_SACH_DON_THUOC SET SOLUONG=" + soluong + " WHERE ID_DANHSACHDONTHUOC=" + mast;
+                    Console.Write(sql);
+                    BacSi.runSQL(conn, sql);
+                }
+            }  
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            int col = dataGridView1.SelectedCells[0].ColumnIndex;
+            int row = dataGridView1.SelectedCells[0].RowIndex;
+            Console.WriteLine("col:" + col);
+            Console.WriteLine("row:" + row);
+            if (col == 3)
+            {
+                if (dataGridView1.Columns[col].Name.ToUpper() == "TRIEUCHUNGBENH")
+                {
+                    string trieuchungUpdate = dataGridView1.SelectedCells[0].Value.ToString();
+                    string mabenhnhan = dataGridView1.Rows[row].Cells[0].Value.ToString();
+                    string sql = "UPDATE DBA_USER.BENH_NHAN SET TRIEUCHUNGBENH = '" + trieuchungUpdate + "' WHERE MABENHNHAN=" + mabenhnhan;
+                    Console.Write(sql);
+                    BacSi.runSQL(conn, sql);
+                }
+
+            }  
+
+        }
     }
 }
