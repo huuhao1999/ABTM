@@ -21,10 +21,13 @@ namespace antbm_do_an
         }
         public static OracleConnection GetDBConnection(string host, int port, string sid, string user, string password)
         {
+            //string a = "Data Source=(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = "
+            //                + host + ")(PORT = " + port + "))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = "
+            //                + sid + ")));Password=" + password + ";User ID=" + user + ";DBA Privilege=SYSDBA";
+            string temp = (user == "sys") ? ";DBA Privilege=SYSDBA" : "";
             string connString = "Data Source=(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = "
-                            + host + ")(PORT = " + port + "))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = "
-                            + sid + ")));Password=" + password + ";User ID=" + user + ";DBA Privilege=SYSDBA";
-
+                         + host + ")(PORT = " + port + "))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = "
+                         + sid + ")));Password=" + password + ";User ID=" + user + temp;
 
             OracleConnection conn = new OracleConnection();
 
@@ -429,6 +432,62 @@ namespace antbm_do_an
             DataTable temp = new DataTable();
             DA.Fill(temp);
             return Convert.ToBoolean(temp.Rows[0]["ISDBA"]);
+        }
+
+        public static List<string> Get_object_type(OracleConnection conn)
+        {
+            string sql = "select distinct OBJECT_TYPE FROM DBA_OBJECTS";
+            OracleCommand cmd = new OracleCommand();
+            cmd.CommandText = sql;
+            cmd.Connection = conn;
+            DataTable temp = new DataTable();
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DA.Fill(temp);
+
+            List<string> ret = new List<string>();
+            foreach(DataRow i in temp.Rows)
+            {
+                ret.Add(i["OBJECT_TYPE"].ToString());
+            }
+            return ret;
+        }
+
+        public static DataTable Get_Object(OracleConnection conn,string ObjectType)
+        {
+            string sql = "select OWNER, OBJECT_NAME,SUBOBJECT_NAME, OBJECT_ID,OBJECT_TYPE, CREATED, STATUS, TEMPORARY, GENERATED, SECONDARY, NAMESPACE, ORACLE_MAINTAINED FROM DBA_OBJECTS WHERE OBJECT_TYPE = '" + ObjectType + "'";
+            OracleCommand cmd = new OracleCommand();
+            cmd.CommandText = sql;
+            cmd.Connection = conn;
+            DataTable temp = new DataTable();
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DA.Fill(temp);
+            return temp;
+        }
+
+        public static void CreateUser(OracleConnection conn, string username, string password)
+        {
+            conn.Open();
+            string temp = (password == "") ? "" : (" IDENTIFIED BY " + password);
+            string sql =
+                "CREATE USER " + username + "IDENTIFIED BY " + password;
+            OracleCommand cmd = new OracleCommand();
+            cmd.CommandText = sql;
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public static void CreateRole(OracleConnection conn, string rolename, string password)
+        {
+            conn.Open();
+            string temp = (password == "") ? "" : (" IDENTIFIED BY " + password);
+            string sql =
+                "CREATE ROLE " + rolename;
+            OracleCommand cmd = new OracleCommand();
+            cmd.CommandText = sql;
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

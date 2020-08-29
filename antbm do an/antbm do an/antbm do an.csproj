@@ -74,6 +74,12 @@
     <Compile Include="Choose_Table.Designer.cs">
       <DependentUpon>Choose_Table.cs</DependentUpon>
     </Compile>
+      <Compile Include="FormCreateUserRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateUserRole.Designer.cs">
+      <DependentUpon>FormCreateUserRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChucNang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f_Admin.resx">
       <DependentUpon>f_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreateUserRole.resx">
+      <DependentUpon>FormCreateUserRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f_DangNhap.resx">
       <DependentUpon>f_DangNhap.cs</DependentUpon>
