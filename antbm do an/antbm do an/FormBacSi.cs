@@ -20,9 +20,13 @@ namespace antbm_do_an
             InitializeComponent();
             conn = form.conn;
 
-           
+            getdieutri();
         }
-
+        public void getdieutri()
+        {
+            BacSi a = new BacSi();
+            a.getdieutri(conn);
+        }
         public void getthongtinbenhnhan()
         {
             BacSi a = new BacSi();
