@@ -43,7 +43,7 @@ namespace antbm_do_an
         }
         public DataTable getthongdonthuoc(OracleConnection conn)
         {
-            string sql = "select bn.mabenhnhan, bn.ten, bn.trieuchungbenh, dsdt.mathuoc, dont.madt,dsdt.id_danhsachdonthuoc from DBA_USER.BENH_NHAN_BAC_SI_VIEW bn, DBA_USER.danh_sach_don_thuoc dsdt, DBA_USER.dieu_tri dt, DBA_USER.donthuoc dont where bn.mabenhnhan=dt.mabenhnhan and dt.id_dieutri=dont.id_dieutri and dont.madt=dsdt.madt";
+            string sql = "select dsdt.id_danhsachdonthuoc,bn.mabenhnhan, bn.ten, bn.trieuchungbenh, dsdt.mathuoc,dsdt.soluong from DBA_USER.BENH_NHAN_BAC_SI_VIEW bn, DBA_USER.danh_sach_don_thuoc dsdt, DBA_USER.dieu_tri dt, DBA_USER.donthuoc dont where bn.mabenhnhan=dt.mabenhnhan and dt.id_dieutri=dont.id_dieutri and dont.madt=dsdt.madt";
             OracleCommand cmd = new OracleCommand(sql, conn);
             OracleDataAdapter DA = new OracleDataAdapter(cmd);
             DataTable temp = new DataTable();
@@ -98,6 +98,15 @@ namespace antbm_do_an
             cmd.ExecuteNonQuery();
        
 
+        }
+        public static void runSQL(OracleConnection conn, string sql)
+        {
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) { };
         }
 
 

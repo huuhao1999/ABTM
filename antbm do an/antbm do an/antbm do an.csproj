@@ -53,6 +53,11 @@
     </Compile>
     <Compile Include="FormTaiVu.Designer.cs">
       <DependentUpon>FormTaiVu.cs</DependentUpon>
+    <Compile Include="FormCreateUserRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateUserRole.Designer.cs">
+      <DependentUpon>FormCreateUserRole.cs</DependentUpon>
     </Compile>
     <Compile Include="FormQuanLiTaiVu.cs">
       <SubType>Form</SubType>
@@ -133,6 +138,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaiVu.resx">
       <DependentUpon>FormTaiVu.cs</DependentUpon>
+    <EmbeddedResource Include="FormCreateUserRole.resx">
+      <DependentUpon>FormCreateUserRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLiTaiVu.resx">
       <DependentUpon>FormQuanLiTaiVu.cs</DependentUpon>

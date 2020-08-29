@@ -62,6 +62,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -81,6 +92,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label7);
@@ -166,6 +178,8 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(718, 357);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // button1
             // 
@@ -190,6 +204,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label17);
             this.tabPage2.Controls.Add(this.label15);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.label14);
@@ -416,6 +431,7 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(540, 304);
             this.dataGridView2.TabIndex = 1;
+            this.dataGridView2.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellValueChanged);
             // 
             // label9
             // 
@@ -428,6 +444,111 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Thông tin điều trị của bệnh thân";
             this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label11.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label11.Location = new System.Drawing.Point(592, 69);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(186, 20);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Update thuốc đơn thuốc";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // label12
+            // 
+            this.label12.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label12.Location = new System.Drawing.Point(864, 109);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(112, 42);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Mã đơn thuốc cần thêm thuốc:";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(982, 111);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(100, 22);
+            this.textBox7.TabIndex = 15;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(982, 167);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 22);
+            this.textBox8.TabIndex = 16;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(982, 222);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 22);
+            this.textBox9.TabIndex = 17;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label13.Location = new System.Drawing.Point(862, 170);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 17);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Mã thuốc:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label14.Location = new System.Drawing.Point(864, 225);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(68, 17);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "Số lượng:";
+            // 
+            // button5
+            // 
+            this.button5.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button5.Location = new System.Drawing.Point(982, 281);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 26);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Thêm thuốc";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label15.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label15.Location = new System.Drawing.Point(863, 74);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(206, 20);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Thêm thuốc vào đơn thuốc";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(32, 433);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(649, 17);
+            this.label16.TabIndex = 18;
+            this.label16.Text = "Lưu ý: Có thể sửa trực tiếp triệu chứng bệnh nhân tại bảng hoặc nhập thông tin bệ" +
+    "nh nhân ở bên phải";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(31, 432);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(733, 17);
+            this.label17.TabIndex = 22;
+            this.label17.Text = "Lưu ý: Có thể update tại bảng hoặc điền thông tin vào bên phải và chỉ được update" +
+    " hai cột (MATHUOC,SOLUONG)";
             // 
             // FormBacSi
             // 
@@ -485,6 +606,8 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
 
     }
 }
