@@ -42,7 +42,7 @@ namespace antbm_do_an
         }
         public static void addBenhNhan(OracleConnection conn, string ten, int namsinh,string diachilienlac,int SDT, string trieuchungbenh)
         {
-            string sql = "INSERT INTO DBA_USER.BENH_NHAN(TEN, NAMSINH,  DIACHILIENLAC,SDT, TRIEUCHUNGBENH) VALUES ( '"+ten+"', '"+namsinh+"','"+diachilienlac+"', '" + SDT + "','"+ trieuchungbenh + "')";
+            string sql = @"INSERT INTO DBA_USER.BENH_NHAN(MABENHNNHAN, TEN, NAMSINH,  DIACHILIENLAC,SDT, TRIEUCHUNGBENH) VALUES ( (SELECT MAX(mabenhnhan) FROM DBA_USER.Benh_nhan ) + 1,'" + ten+"', '"+namsinh+"','"+diachilienlac+"', '" + SDT + "','"+ trieuchungbenh + "')";
             OracleCommand cmd = new OracleCommand(sql, conn);
             cmd.ExecuteNonQuery();
         }

@@ -53,7 +53,7 @@
     </Compile>
     <Compile Include="FormTaiVu.Designer.cs">
       <DependentUpon>FormTaiVu.cs</DependentUpon>
-      </Compile>
+    </Compile>
     <Compile Include="FormCreateUserRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBanThuoc.resx">
       <DependentUpon>FormBanThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKeToan.resx">
+      <DependentUpon>FormKeToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaiVu.resx">
       <DependentUpon>FormTaiVu.cs</DependentUpon>
