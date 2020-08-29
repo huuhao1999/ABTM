@@ -54,12 +54,25 @@
     <Compile Include="FormCreateUserRole.Designer.cs">
       <DependentUpon>FormCreateUserRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKeToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKeToan.Designer.cs">
+      <DependentUpon>FormKeToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuanLiTaiVu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormQuanLiTaiVu.Designer.cs">
       <DependentUpon>FormQuanLiTaiVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTiepTan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTiepTan.Designer.cs">
+      <DependentUpon>FormTiepTan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KeToan.cs" />
     <Compile Include="TaiVu.cs" />
     <Compile Include="BacSi.cs" />
     <Compile Include="Choose Priv.cs">
@@ -113,6 +126,7 @@
     <Compile Include="Oracle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TiepTan.cs" />
     <EmbeddedResource Include="Choose Priv.resx">
       <DependentUpon>Choose Priv.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLiTaiVu.resx">
       <DependentUpon>FormQuanLiTaiVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTiepTan.resx">
+      <DependentUpon>FormTiepTan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f_Admin.resx">
       <DependentUpon>f_Admin.cs</DependentUpon>
