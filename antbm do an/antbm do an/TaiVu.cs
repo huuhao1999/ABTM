@@ -135,6 +135,15 @@ namespace antbm_do_an
             DA.Fill(temp);
             return temp;
         }
+        public static DataTable getViewTaiVu(OracleConnection conn)
+        {
+            string sql = "SELECT * FROM DBA_USER.NHANVIEN_TAI_VU_VIEW";
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
         public static void runSQL(OracleConnection conn, string sql)
         {
             OracleCommand cmd = new OracleCommand(sql, conn);

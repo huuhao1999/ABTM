@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormTaiVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTaiVu.Designer.cs">
+      <DependentUpon>FormTaiVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormQuanLiTaiVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBanThuoc.resx">
       <DependentUpon>FormBanThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTaiVu.resx">
+      <DependentUpon>FormTaiVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLiTaiVu.resx">
       <DependentUpon>FormQuanLiTaiVu.cs</DependentUpon>

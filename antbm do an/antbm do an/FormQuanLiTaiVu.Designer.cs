@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -72,7 +73,7 @@
             // 
             this.label12.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.Control;
+            this.label12.ForeColor = System.Drawing.SystemColors.Window;
             this.label12.Location = new System.Drawing.Point(0, 597);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(221, 41);
@@ -85,7 +86,7 @@
             // 
             this.label11.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.Control;
+            this.label11.ForeColor = System.Drawing.SystemColors.Window;
             this.label11.Location = new System.Drawing.Point(0, 547);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(221, 41);
@@ -98,7 +99,7 @@
             // 
             this.label10.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.Control;
+            this.label10.ForeColor = System.Drawing.SystemColors.Window;
             this.label10.Location = new System.Drawing.Point(0, 497);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(221, 41);
@@ -111,7 +112,7 @@
             // 
             this.label9.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.Control;
+            this.label9.ForeColor = System.Drawing.SystemColors.Window;
             this.label9.Location = new System.Drawing.Point(0, 447);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(221, 41);
@@ -124,7 +125,7 @@
             // 
             this.label8.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.ForeColor = System.Drawing.SystemColors.Window;
             this.label8.Location = new System.Drawing.Point(0, 396);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(221, 41);
@@ -137,7 +138,7 @@
             // 
             this.label7.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.ForeColor = System.Drawing.SystemColors.Window;
             this.label7.Location = new System.Drawing.Point(0, 346);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(221, 41);
@@ -150,7 +151,7 @@
             // 
             this.label6.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.ForeColor = System.Drawing.SystemColors.Window;
             this.label6.Location = new System.Drawing.Point(0, 296);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(221, 41);
@@ -163,7 +164,7 @@
             // 
             this.label5.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.ForeColor = System.Drawing.SystemColors.Window;
             this.label5.Location = new System.Drawing.Point(0, 246);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(221, 41);
@@ -176,7 +177,7 @@
             // 
             this.label4.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
             this.label4.Location = new System.Drawing.Point(0, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(221, 41);
@@ -189,7 +190,7 @@
             // 
             this.label3.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(0, 146);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(221, 41);
@@ -202,7 +203,7 @@
             // 
             this.label2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(0, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(221, 41);
@@ -215,7 +216,7 @@
             // 
             this.label1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(0, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(221, 41);
@@ -226,7 +227,8 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.BackColor = System.Drawing.SystemColors.Window;
+            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(221, 0);
             this.panel2.Name = "panel2";
@@ -240,7 +242,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
@@ -253,6 +255,20 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserAddedRow);
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.Window;
+            this.label13.Location = new System.Drawing.Point(864, 625);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(93, 36);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Lưu mới";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label13.Visible = false;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // FormQuanLiTaiVu
             // 
@@ -288,5 +304,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label13;
     }
 }

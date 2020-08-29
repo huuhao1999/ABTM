@@ -49,7 +49,7 @@ namespace antbm_do_an
                     }
                     catch
                     {
-                        MessageBox.Show("Tải khoản hoặc mật khẩu không đúng");
+                        MessageBox.Show("Đăng nhập thất bại!");
                     }
                 }
                 if (username.StartsWith("bt") == true)
@@ -62,12 +62,23 @@ namespace antbm_do_an
                                         }
                     catch
                     {
-                        MessageBox.Show("Tải khoản hoặc mật khẩu không đúng");
+                        MessageBox.Show("Đăng nhập thất bại!");
                     }
                 }
                 if (username.StartsWith("tv") == true)
                 {
-                    this.Hide();
+                    conn = TaiVu.CreateDBConnection(username, password);
+                    try
+                    {
+                        conn.Open();
+                        FormTaiVu f_tv = new FormTaiVu(this);
+                        f_tv.Show();
+                        //this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Đăng nhập thất bại!");
+                    }
                 }
                 if (username.StartsWith("ql002") == true)
                 {

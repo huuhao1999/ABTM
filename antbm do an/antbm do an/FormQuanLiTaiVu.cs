@@ -16,6 +16,8 @@ namespace antbm_do_an
     {
         private OracleConnection conn;
         private static int num = 2;
+        private static int rowInsert = 0;
+        private static string sqlInsert = "";
         public FormQuanLiTaiVu(f_DangNhap login)
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace antbm_do_an
         }
         private void chuyen_mau(Label lb, int a, int b)
         {
-            lb.BackColor = Color.FromName("Control");
+            lb.BackColor = Color.FromName("Window");
             lb.ForeColor = Color.FromName("HotTrack");
             num = a;
             if(a!=b)
@@ -35,73 +37,73 @@ namespace antbm_do_an
                     case 1:
                         {
                             label1.BackColor = Color.FromName("HotTrack");
-                            label1.ForeColor = Color.FromName("Control");
+                            label1.ForeColor = Color.FromName("Window");
                             break;
                         }
                     case 2:
                         {
                             label2.BackColor = Color.FromName("HotTrack");
-                            label2.ForeColor = Color.FromName("Control");
+                            label2.ForeColor = Color.FromName("Window");
                             break;
                         }
                     case 3:
                         {
                             label3.BackColor = Color.FromName("HotTrack");
-                            label3.ForeColor = Color.FromName("Control");
+                            label3.ForeColor = Color.FromName("Window");
                             break;
                         }
                     case 4:
                         {
                             label4.BackColor = Color.FromName("HotTrack");
-                            label4.ForeColor = Color.FromName("Control");
+                            label4.ForeColor = Color.FromName("Window");
                             break;
                         }
                     case 5:
                         {
                             label5.BackColor = Color.FromName("HotTrack");
-                            label5.ForeColor = Color.FromName("Control");
+                            label5.ForeColor = Color.FromName("Window");
                             break;
                         }
                     case 6:
                         {
                             label6.BackColor = Color.FromName("HotTrack");
-                            label6.ForeColor = Color.FromName("Control");
+                            label6.ForeColor = Color.FromName("Window");
                             break;
                         }
                     case 7:
                         {
                             label7.BackColor = Color.FromName("HotTrack");
-                            label7.ForeColor = Color.FromName("Control");
+                            label7.ForeColor = Color.FromName("Window");
                             break;
                         }
                     case 8:
                         {
                             label8.BackColor = Color.FromName("HotTrack");
-                            label8.ForeColor = Color.FromName("Control");
+                            label8.ForeColor = Color.FromName("Window");
                             break;
                         }
                     case 9:
                         {
                             label9.BackColor = Color.FromName("HotTrack");
-                            label9.ForeColor = Color.FromName("Control");
+                            label9.ForeColor = Color.FromName("Window");
                             break;
                         }
                     case 10:
                         {
                             label10.BackColor = Color.FromName("HotTrack");
-                            label10.ForeColor = Color.FromName("Control");
+                            label10.ForeColor = Color.FromName("Window");
                             break;
                         }
                     case 11:
                         {
                             label11.BackColor = Color.FromName("HotTrack");
-                            label11.ForeColor = Color.FromName("Control");
+                            label11.ForeColor = Color.FromName("Window");
                             break;
                         }
                     case 12:
                         {
                             label12.BackColor = Color.FromName("HotTrack");
-                            label12.ForeColor = Color.FromName("Control");
+                            label12.ForeColor = Color.FromName("Window");
                             break;
                         }
                 }
@@ -113,7 +115,7 @@ namespace antbm_do_an
             chuyen_mau(label1, 1, num);
             dataGridView1.DataSource = TaiVu.getThuoc(conn);
             dataGridView1.ReadOnly = false;
-
+            label13.Visible = false;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -121,6 +123,7 @@ namespace antbm_do_an
             chuyen_mau(label2, 2, num);
             dataGridView1.DataSource = TaiVu.getBenhNhan(conn);
             dataGridView1.ReadOnly = true;
+            label13.Visible = false;
         }
 
 
@@ -129,6 +132,7 @@ namespace antbm_do_an
             chuyen_mau(label3, 3, num);
             dataGridView1.DataSource = TaiVu.getDonThuoc(conn);
             dataGridView1.ReadOnly = true;
+            label13.Visible = false;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -136,6 +140,7 @@ namespace antbm_do_an
             chuyen_mau(label4, 4, num);
             dataGridView1.DataSource = TaiVu.getDSDonThuoc(conn);
             dataGridView1.ReadOnly = true;
+            label13.Visible = false;
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -143,6 +148,7 @@ namespace antbm_do_an
             chuyen_mau(label5, 5, num);
             dataGridView1.DataSource = TaiVu.getDVKhamBenh(conn);
             dataGridView1.ReadOnly = false;
+            label13.Visible = false;
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -150,6 +156,7 @@ namespace antbm_do_an
             chuyen_mau(label6, 6, num);
             dataGridView1.DataSource = TaiVu.getDSDungDV(conn);
             dataGridView1.ReadOnly = true;
+            label13.Visible = false;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -157,6 +164,7 @@ namespace antbm_do_an
             chuyen_mau(label7, 7, num);
             dataGridView1.DataSource = TaiVu.getDieuTri(conn);
             dataGridView1.ReadOnly = true;
+            label13.Visible = false;
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -164,6 +172,7 @@ namespace antbm_do_an
             chuyen_mau(label8, 8, num);
             dataGridView1.DataSource = TaiVu.getNhanVien(conn);
             dataGridView1.ReadOnly = true;
+            label13.Visible = false;
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -171,6 +180,7 @@ namespace antbm_do_an
             chuyen_mau(label9, 9, num);
             dataGridView1.DataSource = TaiVu.getPhongBan(conn);
             dataGridView1.ReadOnly = true;
+            label13.Visible = false;
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -178,6 +188,7 @@ namespace antbm_do_an
             chuyen_mau(label10, 10, num);
             dataGridView1.DataSource = TaiVu.getTrucPhongKham(conn);
             dataGridView1.ReadOnly = true;
+            label13.Visible = false;
         }
 
         private void label11_Click(object sender, EventArgs e)
@@ -185,6 +196,7 @@ namespace antbm_do_an
             chuyen_mau(label11, 11, num);
             dataGridView1.DataSource = TaiVu.getLuong(conn);
             dataGridView1.ReadOnly = true;
+            label13.Visible = false;
         }
 
         private void label12_Click(object sender, EventArgs e)
@@ -192,11 +204,14 @@ namespace antbm_do_an
             chuyen_mau(label12, 12, num);
             dataGridView1.DataSource = TaiVu.getCuocHop(conn);
             dataGridView1.ReadOnly = true;
+            label13.Visible = false;
         }
 
         private void dataGridView1_UserAddedRow(object sender, DataGridViewRowEventArgs e)
         {
-            MessageBox.Show("hahaha");
+            sqlInsert = "";
+            label13.Visible = true;
+            rowInsert = dataGridView1.SelectedCells[0].RowIndex;
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -222,6 +237,17 @@ namespace antbm_do_an
                 }
             }    
             
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            string Ma = dataGridView1.Rows[rowInsert].Cells[0].Value.ToString();
+            string Ten = dataGridView1.Rows[rowInsert].Cells[1].Value.ToString();
+            string Gia = dataGridView1.Rows[rowInsert].Cells[2].Value.ToString();
+            if (num == 1) sqlInsert = "INSERT INTO DBA_USER.THUOC VALUES(" + Ma + ",'" + Ten + "'," + Gia + ")";
+            else if (num == 5) sqlInsert = "INSERT INTO DBA_USER.DICH_VU_KHAM_BENH VALUES(" + Ma + ",'" + Ten + "'," + Gia + ")";
+            TaiVu.runSQL(conn, sqlInsert);
+            MessageBox.Show("Đã thêm thành công!");
         }
     }
 }
