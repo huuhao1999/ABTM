@@ -100,5 +100,10 @@ namespace antbm_do_an
         {
 
         }
+
+        private void f_DangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

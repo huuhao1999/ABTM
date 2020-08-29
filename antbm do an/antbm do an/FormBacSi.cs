@@ -172,5 +172,21 @@ namespace antbm_do_an
           
             }
         }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            BacSi a = new BacSi();
+            a.themthuocvaodonthuoc(conn);
+        }
     }
 }

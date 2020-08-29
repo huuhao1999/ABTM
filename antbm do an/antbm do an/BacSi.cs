@@ -8,6 +8,7 @@ using Oracle.DataAccess.Client;
 using System.Data.Common;
 using System.Data;
 
+
 namespace antbm_do_an
 {
     class BacSi
@@ -38,7 +39,6 @@ namespace antbm_do_an
             OracleDataAdapter DA = new OracleDataAdapter(cmd);
             DataTable temp = new DataTable();
             DA.Fill(temp);
-
             return temp;
         }
         public DataTable getthongdonthuoc(OracleConnection conn)
@@ -80,9 +80,39 @@ namespace antbm_do_an
             Console.WriteLine(sql);
             OracleCommand cmd = new OracleCommand(sql, conn);
             cmd.ExecuteNonQuery();
+            
            
            
         }
+
+
+
+
+
+        public void themthuocvaodonthuoc(OracleConnection conn)
+        {
+            //error
+            string sql = @"INSERT INTO DBA_USER.DANH_SACH_DON_THUOC(ID_DANHSACHDONTHUOC, MADT, MATHUOC, SOLUONG, DONGIA) VALUES ( (SELECT MAX(ID_DANHSACHDONTHUOC) FROM DBA_USER.DANH_SACH_DON_THUOC ) + 1,'1', '5', '3', '30000')";
+            Console.WriteLine(sql);
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+       
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public void updatedonthuoc(OracleConnection conn, string madonthuoc, string idds, string madonthuoc1, string soluong)
         {
             //string sql = "UPDATE DBA_USER.BENH_NHAN SET namsinh ="+namsinh+",diachilienlac='"+diachi+"',ten='"+tenbn+ "',sdt="+sdt+ ",trieuchungbenh='"+trieuchungbenh+  "' WHERE MABENHNHAN="+mabn;

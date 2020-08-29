@@ -84,7 +84,7 @@
             this.f_DangNhap_DangNhap_button.BackColor = System.Drawing.Color.CadetBlue;
             this.f_DangNhap_DangNhap_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.f_DangNhap_DangNhap_button.ForeColor = System.Drawing.SystemColors.Control;
-            this.f_DangNhap_DangNhap_button.Location = new System.Drawing.Point(160, 188);
+            this.f_DangNhap_DangNhap_button.Location = new System.Drawing.Point(173, 188);
             this.f_DangNhap_DangNhap_button.Margin = new System.Windows.Forms.Padding(4);
             this.f_DangNhap_DangNhap_button.Name = "f_DangNhap_DangNhap_button";
             this.f_DangNhap_DangNhap_button.Size = new System.Drawing.Size(125, 43);
@@ -118,6 +118,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "f_DangNhap";
             this.Text = "Log In";
+            this.Load += new System.EventHandler(this.f_DangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
