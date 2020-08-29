@@ -38,6 +38,18 @@ namespace antbm_do_an
                     ChucNang_form MainFrom = new ChucNang_form(this);
                     MainFrom.Show();
                 }
+                if (username.StartsWith("tt") == true)
+                {
+                    conn = Oracle.CreateDBConnection(username, password);
+                    FormTiepTan tieptan = new FormTiepTan(this);
+                    tieptan.Show();
+                }
+                if (username.StartsWith("kt") == true)
+                {
+                    conn = Oracle.CreateDBConnection(username, password);
+                    FormKeToan ketoan = new FormKeToan(this);
+                    ketoan.Show();
+                }
                 if (username.StartsWith("bs") == true)
                 {
                     conn = BacSi.CreateDBConnection(username, password);
