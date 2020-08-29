@@ -54,12 +54,6 @@
     <Compile Include="FormTaiVu.Designer.cs">
       <DependentUpon>FormTaiVu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCreateUserRole.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormCreateUserRole.Designer.cs">
-      <DependentUpon>FormCreateUserRole.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormKeToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +73,13 @@
       <DependentUpon>FormTiepTan.cs</DependentUpon>
     </Compile>
     <Compile Include="KeToan.cs" />
+    <Compile Include="QLTNNS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTNNS.Designer.cs">
+      <DependentUpon>QLTNNS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy.cs" />
     <Compile Include="TaiVu.cs" />
     <Compile Include="BacSi.cs" />
     <Compile Include="Choose Priv.cs">
@@ -157,9 +158,6 @@
     <EmbeddedResource Include="FormTaiVu.resx">
       <DependentUpon>FormTaiVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCreateUserRole.resx">
-      <DependentUpon>FormCreateUserRole.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormQuanLiTaiVu.resx">
       <DependentUpon>FormQuanLiTaiVu.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +180,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QLTNNS.resx">
+      <DependentUpon>QLTNNS.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

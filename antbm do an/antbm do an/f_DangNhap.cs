@@ -107,6 +107,21 @@ namespace antbm_do_an
                         MessageBox.Show("Đăng nhập thất bại!");
                     }
                 }
+                if (username.StartsWith("ql001") == true)
+                {
+                    conn = QuanLy.CreateDBConnection(username, password);
+                    try
+                    {
+                        conn.Open();
+                        QLTNNS f_qltnns = new QLTNNS(this);
+                        f_qltnns.Show();
+                        //this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Đăng nhập thất bại!");
+                    }
+                }
             }
             catch(Exception er)
             {
