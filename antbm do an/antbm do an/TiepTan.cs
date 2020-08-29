@@ -34,15 +34,15 @@ namespace antbm_do_an
             DA.Fill(temp);
             return temp;
         }
-        public static void updateBenhNhan(OracleConnection conn,string mabenhnhan, string ten, string namsinh,string SDT, string diachilienlac, string trieuchungbenh)
+        public static void updateBenhNhan(OracleConnection conn,int mabenhnhan, string ten, int namsinh, string diachilienlac, int SDT, string trieuchungbenh)
         {
             string sql = "UPDATE DBA_USER.BENH_NHAN SET TRIEUCHUNGBENH = '" + trieuchungbenh + ", Ten = '" + ten +", namsinh = '" + namsinh +",sdt = '" + SDT +", diachilienlac = '" + diachilienlac + "' WHERE MABENHNHAN =" + mabenhnhan + " ";
             OracleCommand cmd = new OracleCommand(sql, conn);
             cmd.ExecuteNonQuery();
         }
-        public static void addBenhNhan(OracleConnection conn, string ten, string namsinh, string SDT, string diachilienlac, string trieuchungbenh)
+        public static void addBenhNhan(OracleConnection conn, string ten, int namsinh,string diachilienlac,int SDT, string trieuchungbenh)
         {
-            string sql = "INSERT INTO DBA_USER.BENH_NHAN(TEN, NAMSINH, SDT, DIACHILIENLAC, TRIEUCHUNGBENH) VALUES ( '"+ten+"', '"+namsinh+"', '"+SDT+"','"+diachilienlac+"','"+ trieuchungbenh + "')";
+            string sql = "INSERT INTO DBA_USER.BENH_NHAN(TEN, NAMSINH,  DIACHILIENLAC,SDT, TRIEUCHUNGBENH) VALUES ( '"+ten+"', '"+namsinh+"','"+diachilienlac+"', '" + SDT + "','"+ trieuchungbenh + "')";
             OracleCommand cmd = new OracleCommand(sql, conn);
             cmd.ExecuteNonQuery();
         }
