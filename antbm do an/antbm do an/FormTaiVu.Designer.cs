@@ -70,6 +70,7 @@
             this.ClientSize = new System.Drawing.Size(1191, 670);
             this.Controls.Add(this.panel2);
             this.Name = "FormTaiVu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormQuanLiTaiVu";
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

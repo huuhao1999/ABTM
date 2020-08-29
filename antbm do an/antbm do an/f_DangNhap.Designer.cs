@@ -117,6 +117,7 @@
             this.Controls.Add(this.f_DangNhap_Username_textbox);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "f_DangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
             this.Load += new System.EventHandler(this.f_DangNhap_Load);
             this.ResumeLayout(false);

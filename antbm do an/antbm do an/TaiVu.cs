@@ -137,7 +137,7 @@ namespace antbm_do_an
         }
         public static DataTable getViewTaiVu(OracleConnection conn)
         {
-            string sql = "SELECT * FROM DBA_USER.NHANVIEN_TAI_VU_VIEW";
+            string sql = "SELECT DT.ID_DIEUTRI, DT.MABENHNHAN, DT.MANV AS BACSI,  DV.TENDV, DSDV.ID_SUDUNGDICHVU, DSDV.GIATIEN FROM DBA_USER.DIEU_TRI DT, DBA_USER.DANH_SACH_SU_DUNG_DICH_VU DSDV, DBA_USER.DICH_VU_KHAM_BENH DV WHERE DT.ID_DIEUTRI = DSDV.ID_DIEUTRI AND DSDV.MADV = DV.MADV ORDER BY DT.ID_DIEUTRI";
             OracleCommand cmd = new OracleCommand(sql, conn);
             OracleDataAdapter DA = new OracleDataAdapter(cmd);
             DataTable temp = new DataTable();
