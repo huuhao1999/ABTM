@@ -50,6 +50,29 @@ namespace antbm_do_an
             DA.Fill(temp);
             return temp;
         }
+         public DataTable getDonThuoc(OracleConnection conn, string madonthuoc)
+        {
+           // string sql = "select bn.mabenhnhan, bn.ten, bn.trieuchungbenh, dsdt.mathuoc, dont.madt,dsdt.id_danhsachdonthuoc from DBA_USER.BENH_NHAN_BAC_SI_VIEW bn, DBA_USER.danh_sach_don_thuoc dsdt, DBA_USER.dieu_tri dt, DBA_USER.donthuoc dont where bn.mabenhnhan=dt.mabenhnhan and dt.id_dieutri=dont.id_dieutri and dont.madt=dsdt.madt";
+            string sql = "select dt.madt,t.tenthuoc, dsdt.soluong, dt.tonggia,dt.ngaylap from DBA_USER.thuoc t,DBA_USER.danh_sach_don_thuoc dsdt,DBA_USER.donthuoc dt where dt.madt = dsdt.madt and dsdt.mathuoc = t.mathuoc and dt.madt="+madonthuoc+" ";
+             OracleCommand cmd = new OracleCommand(sql, conn);
+            OracleDataAdapter DA = new OracleDataAdapter(cmd);
+            DataTable temp = new DataTable();
+            DA.Fill(temp);
+            return temp;
+        }
+
+
+         public DataTable getDonThuoc1(OracleConnection conn)
+         {
+             // string sql = "select bn.mabenhnhan, bn.ten, bn.trieuchungbenh, dsdt.mathuoc, dont.madt,dsdt.id_danhsachdonthuoc from DBA_USER.BENH_NHAN_BAC_SI_VIEW bn, DBA_USER.danh_sach_don_thuoc dsdt, DBA_USER.dieu_tri dt, DBA_USER.donthuoc dont where bn.mabenhnhan=dt.mabenhnhan and dt.id_dieutri=dont.id_dieutri and dont.madt=dsdt.madt";
+             string sql = "select dt.madt,t.tenthuoc, dsdt.soluong, dt.tonggia,dt.ngaylap from DBA_USER.thuoc t,DBA_USER.danh_sach_don_thuoc dsdt,DBA_USER.donthuoc dt where dt.madt = dsdt.madt and dsdt.mathuoc = t.mathuoc";
+             OracleCommand cmd = new OracleCommand(sql, conn);
+             OracleDataAdapter DA = new OracleDataAdapter(cmd);
+             DataTable temp = new DataTable();
+             DA.Fill(temp);
+             return temp;
+         }
+
         public void updatebenhnhan(OracleConnection conn, string mabn, string trieuchungbenh)
         {
             //string sql = "UPDATE DBA_USER.BENH_NHAN SET namsinh ="+namsinh+",diachilienlac='"+diachi+"',ten='"+tenbn+ "',sdt="+sdt+ ",trieuchungbenh='"+trieuchungbenh+  "' WHERE MABENHNHAN="+mabn;

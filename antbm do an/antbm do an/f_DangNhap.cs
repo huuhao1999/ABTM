@@ -54,8 +54,16 @@ namespace antbm_do_an
                 }
                 if (username.StartsWith("bt") == true)
                 {
-                    FormBanThuoc bt = new FormBanThuoc();
+                    conn = BacSi.CreateDBConnection(username, password);
+                    try
+                    {
+                    FormBanThuoc bt = new FormBanThuoc(this);
                     bt.Show();
+                                        }
+                    catch
+                    {
+                        MessageBox.Show("Tải khoản hoặc mật khẩu không đúng");
+                    }
                 }
                 if (username.StartsWith("tv") == true)
                 {
