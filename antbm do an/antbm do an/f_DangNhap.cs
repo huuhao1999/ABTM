@@ -95,5 +95,10 @@ namespace antbm_do_an
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
