@@ -20,14 +20,14 @@ namespace antbm_do_an
         }
         public static OracleConnection GetDBConnection(string host, int port, string sid, string user, string password)
         {
-            string ConnectionString = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=" + host + ")(PORT=" + port + ")))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=" + sid + ")));User Id=" + user + ";Password=" + password + ";";
-            OracleConnection conn = new OracleConnection(ConnectionString);
+            string a = "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=xe)));User Id=" + user + ";Password=" + password + ";";
+            OracleConnection conn = new OracleConnection(a);
             return conn;
         }
       
         public static DataTable getBenhNhan(OracleConnection conn, string mabenhnhan)
         {
-            string sql = "SELECT * FROM DBA_USER.BENH_NHAN where mabenhnhan= " + mabenhnhan + "";
+            string sql = "SELECT * FROM DBA_USER.BENH_NHAN where MABENHNHAN= " + mabenhnhan;
             OracleCommand cmd = new OracleCommand(sql, conn);
             OracleDataAdapter DA = new OracleDataAdapter(cmd);
             DataTable temp = new DataTable();
@@ -36,15 +36,22 @@ namespace antbm_do_an
         }
         public static void updateBenhNhan(OracleConnection conn,int mabenhnhan, string ten, int namsinh, string diachilienlac, int SDT, string trieuchungbenh)
         {
-            string sql = "UPDATE DBA_USER.BENH_NHAN SET TRIEUCHUNGBENH = '" + trieuchungbenh + ", Ten = '" + ten +", namsinh = '" + namsinh +",sdt = '" + SDT +", diachilienlac = '" + diachilienlac + "' WHERE MABENHNHAN =" + mabenhnhan + " ";
-            OracleCommand cmd = new OracleCommand(sql, conn);
-            cmd.ExecuteNonQuery();
+           
         }
         public static void addBenhNhan(OracleConnection conn, string ten, int namsinh,string diachilienlac,int SDT, string trieuchungbenh)
         {
             string sql = @"INSERT INTO DBA_USER.BENH_NHAN(MABENHNNHAN, TEN, NAMSINH,  DIACHILIENLAC,SDT, TRIEUCHUNGBENH) VALUES ( (SELECT MAX(mabenhnhan) FROM DBA_USER.Benh_nhan ) + 1,'" + ten+"', '"+namsinh+"','"+diachilienlac+"', '" + SDT + "','"+ trieuchungbenh + "')";
             OracleCommand cmd = new OracleCommand(sql, conn);
             cmd.ExecuteNonQuery();
+        }
+        public static void runSQL(OracleConnection conn, string sql)
+        {
+            OracleCommand cmd = new OracleCommand(sql, conn);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) { };
         }
             
         // public static DataTable getDonThuoc(OracleConnection conn)
@@ -137,15 +144,7 @@ namespace antbm_do_an
         //     DA.Fill(temp);
         //     return temp;
         // }
-        public static void runSQL(OracleConnection conn, string sql)
-        {
-            OracleCommand cmd = new OracleCommand(sql, conn);
-            try
-            {
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex) { };
-        }
+
 
     }
 }
