@@ -43,7 +43,7 @@ namespace antbm_do_an
         }
         public DataTable getthongdonthuoc(OracleConnection conn)
         {
-            string sql = "select dsdt.id_danhsachdonthuoc,bn.mabenhnhan, bn.ten, bn.trieuchungbenh, dsdt.mathuoc,dsdt.soluong from DBA_USER.BENH_NHAN_BAC_SI_VIEW bn, DBA_USER.danh_sach_don_thuoc dsdt, DBA_USER.dieu_tri dt, DBA_USER.donthuoc dont where bn.mabenhnhan=dt.mabenhnhan and dt.id_dieutri=dont.id_dieutri and dont.madt=dsdt.madt";
+            string sql = "select dsdt.id_danhsachdonthuoc,bn.mabenhnhan, bn.ten, bn.trieuchungbenh, dsdt.mathuoc,dsdt.soluong, dsdt.madt from DBA_USER.BENH_NHAN_BAC_SI_VIEW bn, DBA_USER.danh_sach_don_thuoc dsdt, DBA_USER.dieu_tri dt, DBA_USER.donthuoc dont where bn.mabenhnhan=dt.mabenhnhan and dt.id_dieutri=dont.id_dieutri and dont.madt=dsdt.madt";
             OracleCommand cmd = new OracleCommand(sql, conn);
             OracleDataAdapter DA = new OracleDataAdapter(cmd);
             DataTable temp = new DataTable();
@@ -76,7 +76,7 @@ namespace antbm_do_an
         public void updatebenhnhan(OracleConnection conn, string mabn, string trieuchungbenh)
         {
             //string sql = "UPDATE DBA_USER.BENH_NHAN SET namsinh ="+namsinh+",diachilienlac='"+diachi+"',ten='"+tenbn+ "',sdt="+sdt+ ",trieuchungbenh='"+trieuchungbenh+  "' WHERE MABENHNHAN="+mabn;
-            string sql = "UPDATE DBA_USER.BENH_NHAN SET TRIEUCHUNGBENH = '"+trieuchungbenh+"' WHERE MABENHNHAN ="+mabn+" ";
+            string sql = "UPDATE DBA_USER.BENH_NHAN_BAC_SI_VIEW SET TRIEUCHUNGBENH = '" + trieuchungbenh + "' WHERE MABENHNHAN =" + mabn + " ";
             Console.WriteLine(sql);
             OracleCommand cmd = new OracleCommand(sql, conn);
             cmd.ExecuteNonQuery();

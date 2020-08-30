@@ -187,8 +187,16 @@ namespace antbm_do_an
         {
             BacSi a = new BacSi();
             a.themthuocvaodonthuoc(conn);
-        }
+            string iddonthuoc =textBox7.Text;
+            string mathuoc=textBox8.Text;
+            string soluong=textBox9.Text;
 
+            string sqlInsert = "INSERT INTO DBA_USER.DANH_SACH_DON_THUOC(ID_DANHSACHDONTHUOC, MADT, MATHUOC, SOLUONG, DONGIA) VALUES ((SELECT MAX(ID_DANHSACHDONTHUOC) FROM DBA_USER.DANH_SACH_DON_THUOC)+1, " + iddonthuoc + ", " + mathuoc + "," + soluong + ", 15000)";
+                    // string sqlInsert = "INSERT INTO DBA_USER.DANH_SACH_DON_THUOC(ID_DANHSACHDONTHUOC, MADT, MATHUOC, SOLUONG, DONGIA) VALUES ( (SELECT MAX(ID_DANHSACHDONTHUOC) FROM DBA_USER.DANH_SACH_DON_THUOC ) + 1,"+iddonthuoc+", "+mathuoc+", "+soluong+", '30000')";
+                     Console.Write(sqlInsert);
+                    BacSi.runSQL(conn, sqlInsert);
+            MessageBox.Show("Đã thêm thành công!");
+        }
         private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             int col = dataGridView2.SelectedCells[0].ColumnIndex;
@@ -239,13 +247,11 @@ namespace antbm_do_an
                 {
                     string trieuchungUpdate = dataGridView1.SelectedCells[0].Value.ToString();
                     string mabenhnhan = dataGridView1.Rows[row].Cells[0].Value.ToString();
-                    string sql = "UPDATE DBA_USER.BENH_NHAN SET TRIEUCHUNGBENH = '" + trieuchungUpdate + "' WHERE MABENHNHAN=" + mabenhnhan;
+                    string sql = "UPDATE DBA_USER.BENH_NHAN_BAC_SI_VIEW SET TRIEUCHUNGBENH = '" + trieuchungUpdate + "' WHERE MABENHNHAN=" + mabenhnhan;
                     Console.Write(sql);
                     BacSi.runSQL(conn, sql);
                 }
-
             }  
-
         }
     }
 }

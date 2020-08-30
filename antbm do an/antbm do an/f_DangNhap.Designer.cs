@@ -38,18 +38,21 @@
             // 
             // f_DangNhap_Username_textbox
             // 
-            this.f_DangNhap_Username_textbox.Location = new System.Drawing.Point(167, 71);
+            this.f_DangNhap_Username_textbox.Location = new System.Drawing.Point(223, 87);
+            this.f_DangNhap_Username_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.f_DangNhap_Username_textbox.Name = "f_DangNhap_Username_textbox";
-            this.f_DangNhap_Username_textbox.Size = new System.Drawing.Size(138, 20);
+            this.f_DangNhap_Username_textbox.Size = new System.Drawing.Size(183, 22);
             this.f_DangNhap_Username_textbox.TabIndex = 0;
             this.f_DangNhap_Username_textbox.Text = "dba_user";
             this.f_DangNhap_Username_textbox.TextChanged += new System.EventHandler(this.f_DangNhap_Username_textbox_TextChanged);
             // 
             // f_DangNhap_Password_textbox
             // 
-            this.f_DangNhap_Password_textbox.Location = new System.Drawing.Point(167, 110);
+            this.f_DangNhap_Password_textbox.Location = new System.Drawing.Point(223, 135);
+            this.f_DangNhap_Password_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.f_DangNhap_Password_textbox.Name = "f_DangNhap_Password_textbox";
-            this.f_DangNhap_Password_textbox.Size = new System.Drawing.Size(138, 20);
+            this.f_DangNhap_Password_textbox.PasswordChar = '*';
+            this.f_DangNhap_Password_textbox.Size = new System.Drawing.Size(183, 22);
             this.f_DangNhap_Password_textbox.TabIndex = 1;
             this.f_DangNhap_Password_textbox.Text = "123";
             // 
@@ -59,9 +62,10 @@
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(44, 74);
+            this.label1.Location = new System.Drawing.Point(59, 91);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 15);
+            this.label1.Size = new System.Drawing.Size(139, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "UserName (MaNV):";
             // 
@@ -70,9 +74,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.label2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label2.Location = new System.Drawing.Point(44, 111);
+            this.label2.Location = new System.Drawing.Point(59, 137);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.Size = new System.Drawing.Size(79, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -82,9 +87,10 @@
             this.f_DangNhap_DangNhap_button.BackColor = System.Drawing.Color.CadetBlue;
             this.f_DangNhap_DangNhap_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.f_DangNhap_DangNhap_button.ForeColor = System.Drawing.SystemColors.Control;
-            this.f_DangNhap_DangNhap_button.Location = new System.Drawing.Point(130, 153);
+            this.f_DangNhap_DangNhap_button.Location = new System.Drawing.Point(173, 188);
+            this.f_DangNhap_DangNhap_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.f_DangNhap_DangNhap_button.Name = "f_DangNhap_DangNhap_button";
-            this.f_DangNhap_DangNhap_button.Size = new System.Drawing.Size(94, 35);
+            this.f_DangNhap_DangNhap_button.Size = new System.Drawing.Size(125, 43);
             this.f_DangNhap_DangNhap_button.TabIndex = 4;
             this.f_DangNhap_DangNhap_button.Text = "Đăng nhập";
             this.f_DangNhap_DangNhap_button.UseVisualStyleBackColor = false;
@@ -95,24 +101,24 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.label3.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label3.Location = new System.Drawing.Point(107, 23);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(143, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 22);
+            this.label3.Size = new System.Drawing.Size(181, 26);
             this.label3.TabIndex = 5;
             this.label3.Text = "Quản lí bệnh viện";
             // 
             // f_DangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 222);
+            this.ClientSize = new System.Drawing.Size(463, 273);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.f_DangNhap_DangNhap_button);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.f_DangNhap_Password_textbox);
             this.Controls.Add(this.f_DangNhap_Username_textbox);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "f_DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
