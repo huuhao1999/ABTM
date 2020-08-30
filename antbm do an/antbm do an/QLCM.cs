@@ -17,7 +17,20 @@ namespace antbm_do_an
         private void QLCM_Load(object sender, EventArgs e)
         {
             try
+            { 
+
+            }
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void QLCM_Load_1(object sender, EventArgs e)
+        {
+            try
+            {
+
                 cbbTableView.Items.Add("PHONG_BAN");
                 cbbTableView.Items.Add("NHANVIEN");
                 cbbTableView.Items.Add("TRUC_PHONG_KHAM");
@@ -28,7 +41,6 @@ namespace antbm_do_an
                 cbbTableView.Items.Add("DANH_SACH_DON_THUOC");
                 cbbTableView.Items.Add("DANH_SACH_SU_DUNG_DICH_VU");
                 cbbTableView.Items.Add("LUONG");
-                MessageBox.Show("PHONG_BAN");
 
             }
             catch (Exception ex)
@@ -57,5 +69,12 @@ namespace antbm_do_an
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
     }
 }

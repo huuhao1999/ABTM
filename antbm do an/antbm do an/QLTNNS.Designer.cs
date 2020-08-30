@@ -55,9 +55,9 @@
             // 
             // btnDeleteRecord
             // 
-            this.btnDeleteRecord.Location = new System.Drawing.Point(296, 15);
+            this.btnDeleteRecord.Location = new System.Drawing.Point(160, 47);
             this.btnDeleteRecord.Name = "btnDeleteRecord";
-            this.btnDeleteRecord.Size = new System.Drawing.Size(127, 23);
+            this.btnDeleteRecord.Size = new System.Drawing.Size(131, 23);
             this.btnDeleteRecord.TabIndex = 5;
             this.btnDeleteRecord.Text = "Xóa dữ liệu đang chọn";
             this.btnDeleteRecord.UseVisualStyleBackColor = true;
@@ -66,7 +66,7 @@
             // cbbView
             // 
             this.cbbView.FormattingEnabled = true;
-            this.cbbView.Location = new System.Drawing.Point(575, 17);
+            this.cbbView.Location = new System.Drawing.Point(527, 17);
             this.cbbView.Name = "cbbView";
             this.cbbView.Size = new System.Drawing.Size(146, 21);
             this.cbbView.TabIndex = 4;
@@ -75,7 +75,7 @@
             // lblView
             // 
             this.lblView.AutoSize = true;
-            this.lblView.Location = new System.Drawing.Point(473, 20);
+            this.lblView.Location = new System.Drawing.Point(425, 20);
             this.lblView.Name = "lblView";
             this.lblView.Size = new System.Drawing.Size(96, 13);
             this.lblView.TabIndex = 3;
@@ -95,7 +95,7 @@
             this.cbbUpdate.FormattingEnabled = true;
             this.cbbUpdate.Location = new System.Drawing.Point(160, 17);
             this.cbbUpdate.Name = "cbbUpdate";
-            this.cbbUpdate.Size = new System.Drawing.Size(121, 21);
+            this.cbbUpdate.Size = new System.Drawing.Size(131, 21);
             this.cbbUpdate.TabIndex = 1;
             this.cbbUpdate.SelectedIndexChanged += new System.EventHandler(this.cbbUpdate_SelectedIndexChanged);
             this.cbbUpdate.SelectedValueChanged += new System.EventHandler(this.cbbUpdate_SelectedValueChanged);
@@ -103,9 +103,9 @@
             // dgvData
             // 
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(3, 56);
+            this.dgvData.Location = new System.Drawing.Point(3, 76);
             this.dgvData.Name = "dgvData";
-            this.dgvData.Size = new System.Drawing.Size(732, 367);
+            this.dgvData.Size = new System.Drawing.Size(732, 347);
             this.dgvData.TabIndex = 0;
             this.dgvData.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvData_CellMouseClick);
             this.dgvData.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellValueChanged);

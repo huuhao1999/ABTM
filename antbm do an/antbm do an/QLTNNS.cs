@@ -1,5 +1,4 @@
-﻿
-using Oracle.DataAccess.Client;
+﻿using Oracle.DataAccess.Client;
 using System;
 using System.Windows.Forms;
 
@@ -31,6 +30,7 @@ namespace antbm_do_an
                 cbbView.Items.Add("DANH_SACH_DON_THUOC");
                 cbbView.Items.Add("DANH_SACH_SU_DUNG_DICH_VU");
                 cbbView.Items.Add("LUONG");
+                
 
             }
             catch (Exception ex)
@@ -38,6 +38,8 @@ namespace antbm_do_an
                 MessageBox.Show(ex.Message);
             }
         }
+
+        String deleteTable;
         String tablename;
         private void cbbUpdate_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -45,6 +47,7 @@ namespace antbm_do_an
             {
                 String Utable = this.cbbUpdate.SelectedItem.ToString();
                 tablename = Utable;
+                deleteTable = Utable;
                 dgvData.DataSource = QuanLy.getUpdateTable(conn, Utable);
                 if (Utable != "PHONG_BAN" && Utable != "NHANVIEN" && Utable != "TRUC_PHONG_KHAM")
                 {
@@ -57,7 +60,7 @@ namespace antbm_do_an
             }
         }
         String  deleteID;
-        String deleteTable;
+
 
         private void dgvData_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -134,7 +137,7 @@ namespace antbm_do_an
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -143,7 +146,14 @@ namespace antbm_do_an
             if (deleteTable == "PHONG_BAN")
             {
                 deleteID = dgvData.Rows[e.RowIndex].Cells["MAPB"].Value.ToString();
-                MessageBox.Show(deleteID);
+            }
+            if (deleteTable == "NHANVIEN")
+            {
+                deleteID = dgvData.Rows[e.RowIndex].Cells["MANV"].Value.ToString();
+            }
+            if (deleteTable == "TRUC_PHONG_KHAM")
+            {
+                deleteID = dgvData.Rows[e.RowIndex].Cells["ID_TRUCPHONGKHAM"].Value.ToString();
             }
         }
 
@@ -153,16 +163,15 @@ namespace antbm_do_an
             {
                 if (deleteTable == "PHONG_BAN")
                 {
-                    MessageBox.Show(deleteTable);
                     dgvData.DataSource = QuanLy.DeleteTableDepartment(conn, tablename, deleteID);
                 }
                 if (deleteTable == "NHANVIEN")
                 {
-                    dgvData.DataSource = QuanLy.DeleteTableDepartment(conn, tablename, deleteID);
+                    dgvData.DataSource = QuanLy.DeleteTableStaff(conn, tablename, deleteID);
                 }
                 if (deleteTable == "TRUC_PHONG_KHAM")
                 {
-                    dgvData.DataSource = QuanLy.DeleteTableDepartment(conn, tablename, deleteID);
+                    dgvData.DataSource = QuanLy.DeleteTableShift(conn, tablename, deleteID);
                 }
             }
             catch (Exception ex)

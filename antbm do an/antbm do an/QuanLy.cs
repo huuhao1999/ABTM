@@ -30,6 +30,10 @@ namespace antbm_do_an
 
         public static DataTable getUpdateTable(OracleConnection conn, string a)
         {
+            if(a == "NHANVIEN")
+            {
+                a = a + " ORDER BY MANV";
+            }
             string sql = "SELECT * FROM DBA_USER." + a;
             OracleCommand cmd = new OracleCommand(sql, conn);
             OracleDataAdapter DA = new OracleDataAdapter(cmd);
