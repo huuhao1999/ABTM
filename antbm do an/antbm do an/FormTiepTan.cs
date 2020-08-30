@@ -19,11 +19,15 @@ namespace antbm_do_an
             InitializeComponent();
             conn = form.conn;
         }
+        public void getthongtinbenhnhan()
+        {
+            string a = textBox1.Text;
 
+            dataGridView1.DataSource = TiepTan.getBenhNhan(conn, a);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            int mabenhnhan = Convert.ToInt32(textBox1.Text);
-            TiepTan.getBenhNhan(conn, mabenhnhan);
+            getthongtinbenhnhan();
         }
 
         private void button2_Click(object sender, EventArgs e)

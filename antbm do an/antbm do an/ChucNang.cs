@@ -314,8 +314,8 @@ namespace antbm_do_an
 
         private void CreateUserRole_button_Click(object sender, EventArgs e)
         {
-            FormCreateUserRole temp = new FormCreateUserRole(this);
-            temp.Show();
+          //  FormCreateUserRole temp = new FormCreateUserRole(this);
+          //  temp.Show();
         }
     }
 

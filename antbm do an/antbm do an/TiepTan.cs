@@ -25,9 +25,9 @@ namespace antbm_do_an
             return conn;
         }
       
-        public static DataTable getBenhNhan(OracleConnection conn, int mabenhnhan)
+        public static DataTable getBenhNhan(OracleConnection conn, string mabenhnhan)
         {
-            string sql = "SELECT * FROM DBA_USER.BENH_NHAN where mabenhnhan= " + mabenhnhan + " ;";
+            string sql = "SELECT * FROM DBA_USER.BENH_NHAN WHERE MABENHNHAN=" + mabenhnhan;
             OracleCommand cmd = new OracleCommand(sql, conn);
             OracleDataAdapter DA = new OracleDataAdapter(cmd);
             DataTable temp = new DataTable();
