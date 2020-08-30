@@ -40,7 +40,6 @@ namespace antbm_do_an
                 cbbTableView.Items.Add("DONTHUOC");
                 cbbTableView.Items.Add("DANH_SACH_DON_THUOC");
                 cbbTableView.Items.Add("DANH_SACH_SU_DUNG_DICH_VU");
-                cbbTableView.Items.Add("LUONG");
 
             }
             catch (Exception ex)

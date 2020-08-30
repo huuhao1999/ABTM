@@ -13,7 +13,19 @@ namespace antbm_do_an
             InitializeComponent();
             conn = form.conn;
         }
+        String nvID;
+        String nvMapb;
+        String nvTen;
+        String nvLabacsi;
+        String nvUserName;
+        String nvLuong;
+        String nvPhucap;
 
+        String pbID;
+        String pbTen;
+
+        String tpkMaNV;
+        String tpkThoigian;
 
         private void QLTNNS_Load(object sender, EventArgs e)
         {
@@ -83,29 +95,40 @@ namespace antbm_do_an
                     if (tablename == "PHONG_BAN")
                     {
                         int c = QuanLy.getCount(conn, tablename) + 1;
+                        pbID = c.ToString();
                         String tenpb = dgvData.Rows[e.RowIndex].Cells["TENPB"].Value.ToString();
-                        dgvData.DataSource = QuanLy.InsertTableDepartment(conn, tablename, c.ToString(), tenpb);
+                        pbTen = tenpb;
+                        //dgvData.DataSource = QuanLy.InsertTableDepartment(conn, tablename, c.ToString(), tenpb);
                     }
                     if (tablename == "NHANVIEN")
                     {
                         int c = QuanLy.getCount(conn, tablename) + 1;
+                        nvID = c.ToString();
                         String mapb = dgvData.Rows[e.RowIndex].Cells["MAPB"].Value.ToString();
+                        nvMapb = mapb;
                         String tennv = dgvData.Rows[e.RowIndex].Cells["TENNV"].Value.ToString();
+                        nvTen = tennv;
                         String labacsi = dgvData.Rows[e.RowIndex].Cells["LABACSI"].Value.ToString();
+                        nvLabacsi = labacsi;
                         String username = dgvData.Rows[e.RowIndex].Cells["username"].Value.ToString();
+                        nvUserName = username;
                         String luong = dgvData.Rows[e.RowIndex].Cells["LUONGCOBAN"].Value.ToString();
+                        nvLuong = luong;
                         String phucap = dgvData.Rows[e.RowIndex].Cells["PHUCAP"].Value.ToString();
-                        dgvData.DataSource = QuanLy.InsertTableStaff(conn, tablename, c.ToString(), mapb, tennv, labacsi, username, luong, phucap);
+                        nvPhucap = phucap;
+                        //dgvData.DataSource = QuanLy.InsertTableStaff(conn, tablename, c.ToString(), mapb, tennv, labacsi, username, luong, phucap);
  
                     }
                     if (tablename == "TRUC_PHONG_KHAM")
                     {
                         //int c = QuanLy.getCount(conn, tablename) + 1;
                         String manv = dgvData.Rows[e.RowIndex].Cells["MANV"].Value.ToString();
+                        tpkMaNV = manv;
                         DateTime today = DateTime.Today;
                         String thoigian = today.ToString("dd-MMMM-yy");
+                        tpkThoigian = thoigian;
                         //MessageBox.Show(thoigian);
-                        dgvData.DataSource = QuanLy.InsertTableShift(conn, tablename, manv, thoigian);
+                        //dgvData.DataSource = QuanLy.InsertTableShift(conn, tablename, manv, thoigian);
                     }
                 }
                 else
@@ -137,7 +160,7 @@ namespace antbm_do_an
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -196,6 +219,42 @@ namespace antbm_do_an
             }
         }
 
+        private void btnInsertRecord_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tablename == "PHONG_BAN")
+                {
+                    dgvData.DataSource = QuanLy.InsertTableDepartment(conn, tablename, pbID, pbTen);
+                    pbID = null;
+                    pbTen = null;
+                    MessageBox.Show("Nhap phong ban moi thanh cong");
+                }
+                if (tablename == "NHANVIEN")
+                {
+                    dgvData.DataSource = QuanLy.InsertTableStaff(conn, tablename, nvID, nvMapb, nvTen, nvLabacsi, nvUserName, nvLuong, nvPhucap);
+                    nvID = null;
+                    nvMapb = null;
+                    nvTen = null;
+                    nvLabacsi = null;
+                    nvUserName = null;
+                    nvLuong = null;
+                    nvPhucap = null;
+                    MessageBox.Show("Nhap nhan vien moi thanh cong!");
+                }
+                if (tablename == "TRUC_PHONG_KHAM")
+                {
+                    dgvData.DataSource = QuanLy.InsertTableShift(conn, tablename, tpkMaNV, tpkThoigian);
+                    tpkMaNV = null;
+                    tpkThoigian = null;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void cbbUpdate_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -216,6 +275,7 @@ namespace antbm_do_an
         {
 
         }
+
 
     }
 }

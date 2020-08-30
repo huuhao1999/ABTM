@@ -35,12 +35,14 @@
             this.lblUpdate = new System.Windows.Forms.Label();
             this.cbbUpdate = new System.Windows.Forms.ComboBox();
             this.dgvData = new System.Windows.Forms.DataGridView();
+            this.btnInsertRecord = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnInsertRecord);
             this.panel1.Controls.Add(this.btnDeleteRecord);
             this.panel1.Controls.Add(this.cbbView);
             this.panel1.Controls.Add(this.lblView);
@@ -55,7 +57,7 @@
             // 
             // btnDeleteRecord
             // 
-            this.btnDeleteRecord.Location = new System.Drawing.Point(160, 47);
+            this.btnDeleteRecord.Location = new System.Drawing.Point(297, 46);
             this.btnDeleteRecord.Name = "btnDeleteRecord";
             this.btnDeleteRecord.Size = new System.Drawing.Size(131, 23);
             this.btnDeleteRecord.TabIndex = 5;
@@ -66,7 +68,7 @@
             // cbbView
             // 
             this.cbbView.FormattingEnabled = true;
-            this.cbbView.Location = new System.Drawing.Point(527, 17);
+            this.cbbView.Location = new System.Drawing.Point(589, 32);
             this.cbbView.Name = "cbbView";
             this.cbbView.Size = new System.Drawing.Size(146, 21);
             this.cbbView.TabIndex = 4;
@@ -75,7 +77,7 @@
             // lblView
             // 
             this.lblView.AutoSize = true;
-            this.lblView.Location = new System.Drawing.Point(425, 20);
+            this.lblView.Location = new System.Drawing.Point(487, 35);
             this.lblView.Name = "lblView";
             this.lblView.Size = new System.Drawing.Size(96, 13);
             this.lblView.TabIndex = 3;
@@ -84,7 +86,7 @@
             // lblUpdate
             // 
             this.lblUpdate.AutoSize = true;
-            this.lblUpdate.Location = new System.Drawing.Point(22, 20);
+            this.lblUpdate.Location = new System.Drawing.Point(22, 35);
             this.lblUpdate.Name = "lblUpdate";
             this.lblUpdate.Size = new System.Drawing.Size(132, 13);
             this.lblUpdate.TabIndex = 2;
@@ -93,7 +95,7 @@
             // cbbUpdate
             // 
             this.cbbUpdate.FormattingEnabled = true;
-            this.cbbUpdate.Location = new System.Drawing.Point(160, 17);
+            this.cbbUpdate.Location = new System.Drawing.Point(160, 32);
             this.cbbUpdate.Name = "cbbUpdate";
             this.cbbUpdate.Size = new System.Drawing.Size(131, 21);
             this.cbbUpdate.TabIndex = 1;
@@ -103,12 +105,22 @@
             // dgvData
             // 
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvData.Location = new System.Drawing.Point(3, 76);
+            this.dgvData.Location = new System.Drawing.Point(3, 87);
             this.dgvData.Name = "dgvData";
-            this.dgvData.Size = new System.Drawing.Size(732, 347);
+            this.dgvData.Size = new System.Drawing.Size(732, 336);
             this.dgvData.TabIndex = 0;
             this.dgvData.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvData_CellMouseClick);
             this.dgvData.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellValueChanged);
+            // 
+            // btnInsertRecord
+            // 
+            this.btnInsertRecord.Location = new System.Drawing.Point(297, 17);
+            this.btnInsertRecord.Name = "btnInsertRecord";
+            this.btnInsertRecord.Size = new System.Drawing.Size(131, 23);
+            this.btnInsertRecord.TabIndex = 6;
+            this.btnInsertRecord.Text = "Thêm dữ liệu";
+            this.btnInsertRecord.UseVisualStyleBackColor = true;
+            this.btnInsertRecord.Click += new System.EventHandler(this.btnInsertRecord_Click);
             // 
             // QLTNNS
             // 
@@ -135,5 +147,6 @@
         private System.Windows.Forms.Label lblView;
         private System.Windows.Forms.Label lblUpdate;
         private System.Windows.Forms.Button btnDeleteRecord;
+        private System.Windows.Forms.Button btnInsertRecord;
     }
 }

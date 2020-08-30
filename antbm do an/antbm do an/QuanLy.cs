@@ -34,6 +34,14 @@ namespace antbm_do_an
             {
                 a = a + " ORDER BY MANV";
             }
+            if (a == "TRUC_PHONG_KHAM")
+            {
+                a = a + " ORDER BY ID_TRUCPHONGKHAM";
+            }
+            if (a == "PHONG_BAN")
+            {
+                a = a + " ORDER BY MAPB";
+            }
             string sql = "SELECT * FROM DBA_USER." + a;
             OracleCommand cmd = new OracleCommand(sql, conn);
             OracleDataAdapter DA = new OracleDataAdapter(cmd);
