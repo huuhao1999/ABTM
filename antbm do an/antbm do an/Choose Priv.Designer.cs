@@ -36,6 +36,8 @@
             // 
             // Priv_dataGridView
             // 
+            this.Priv_dataGridView.AllowUserToAddRows = false;
+            this.Priv_dataGridView.AllowUserToDeleteRows = false;
             this.Priv_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Priv_dataGridView.Location = new System.Drawing.Point(12, 25);
             this.Priv_dataGridView.Name = "Priv_dataGridView";

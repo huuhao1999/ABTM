@@ -66,6 +66,19 @@
     <Compile Include="FormQuanLiTaiVu.Designer.cs">
       <DependentUpon>FormQuanLiTaiVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLCM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLCM.Designer.cs">
+      <DependentUpon>QLCM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLTNNS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLTNNS.Designer.cs">
+      <DependentUpon>QLTNNS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLy.cs" />
     <Compile Include="FormTiepTan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,9 +158,6 @@
     <EmbeddedResource Include="FormBanThuoc.resx">
       <DependentUpon>FormBanThuoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormKeToan.resx">
-      <DependentUpon>FormKeToan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormTaiVu.resx">
       <DependentUpon>FormTaiVu.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +183,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QLCM.resx">
+      <DependentUpon>QLCM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QLTNNS.resx">
+      <DependentUpon>QLTNNS.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

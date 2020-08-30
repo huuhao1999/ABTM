@@ -39,19 +39,22 @@
             // f_DangNhap_Username_textbox
             // 
             this.f_DangNhap_Username_textbox.Location = new System.Drawing.Point(223, 87);
-            this.f_DangNhap_Username_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.f_DangNhap_Username_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.f_DangNhap_Username_textbox.Name = "f_DangNhap_Username_textbox";
             this.f_DangNhap_Username_textbox.Size = new System.Drawing.Size(183, 22);
             this.f_DangNhap_Username_textbox.TabIndex = 0;
+            this.f_DangNhap_Username_textbox.Text = "dba_user";
             this.f_DangNhap_Username_textbox.TextChanged += new System.EventHandler(this.f_DangNhap_Username_textbox_TextChanged);
             // 
             // f_DangNhap_Password_textbox
             // 
-            this.f_DangNhap_Password_textbox.Location = new System.Drawing.Point(223, 136);
-            this.f_DangNhap_Password_textbox.Margin = new System.Windows.Forms.Padding(4);
+            this.f_DangNhap_Password_textbox.Location = new System.Drawing.Point(223, 135);
+            this.f_DangNhap_Password_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.f_DangNhap_Password_textbox.Name = "f_DangNhap_Password_textbox";
+            this.f_DangNhap_Password_textbox.PasswordChar = '*';
             this.f_DangNhap_Password_textbox.Size = new System.Drawing.Size(183, 22);
             this.f_DangNhap_Password_textbox.TabIndex = 1;
+            this.f_DangNhap_Password_textbox.Text = "123";
             // 
             // label1
             // 
@@ -85,7 +88,7 @@
             this.f_DangNhap_DangNhap_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.f_DangNhap_DangNhap_button.ForeColor = System.Drawing.SystemColors.Control;
             this.f_DangNhap_DangNhap_button.Location = new System.Drawing.Point(173, 188);
-            this.f_DangNhap_DangNhap_button.Margin = new System.Windows.Forms.Padding(4);
+            this.f_DangNhap_DangNhap_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.f_DangNhap_DangNhap_button.Name = "f_DangNhap_DangNhap_button";
             this.f_DangNhap_DangNhap_button.Size = new System.Drawing.Size(125, 43);
             this.f_DangNhap_DangNhap_button.TabIndex = 4;
@@ -115,7 +118,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.f_DangNhap_Password_textbox);
             this.Controls.Add(this.f_DangNhap_Username_textbox);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "f_DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";

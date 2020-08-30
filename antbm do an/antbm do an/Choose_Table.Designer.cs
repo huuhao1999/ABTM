@@ -35,6 +35,8 @@
             // 
             // All_Table_dataGridView
             // 
+            this.All_Table_dataGridView.AllowUserToAddRows = false;
+            this.All_Table_dataGridView.AllowUserToDeleteRows = false;
             this.All_Table_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.All_Table_dataGridView.Location = new System.Drawing.Point(12, 29);
             this.All_Table_dataGridView.Name = "All_Table_dataGridView";

@@ -32,7 +32,7 @@ namespace antbm_do_an
                 LogedIn_Username = username;
                 //MainForm.username = f_DangNhap_Username_textbox.Text;
                 //MessageBox.Show("Da dang nhap voi username:" +username);
-                if (username.StartsWith("sy") == true || username.StartsWith("dpa") == true)
+                if (username.StartsWith("sy") == true || username.StartsWith("dba") == true)
                 {
                     conn = Oracle.CreateDBConnection(username, password);
                     ChucNang_form MainFrom = new ChucNang_form(this);
@@ -101,6 +101,36 @@ namespace antbm_do_an
                         conn.Open();
                         FormQuanLiTaiVu f_qltv = new FormQuanLiTaiVu(this);
                         f_qltv.Show();
+                        //this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Đăng nhập thất bại!");
+                    }
+                }
+                if (username.StartsWith("ql001") == true)
+                {
+                    conn = QuanLy.CreateDBConnection(username, password);
+                    try
+                    {
+                        conn.Open();
+                        QLTNNS f_qltnns = new QLTNNS(this);
+                        f_qltnns.Show();
+                        //this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Đăng nhập thất bại!");
+                    }
+                }
+                if (username.StartsWith("ql003") == true)
+                {
+                    conn = QuanLy.CreateDBConnection(username, password);
+                    try
+                    {
+                        conn.Open();
+                        QLCM f_qlcm = new QLCM(this);
+                        f_qlcm.Show();
                         //this.Hide();
                     }
                     catch (Exception ex)

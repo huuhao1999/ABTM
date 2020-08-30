@@ -26,10 +26,14 @@ namespace antbm_do_an
       
                 GetUsers();
                 GetRoles();
-           
+            GetObjectType();
             RoleTab = tabControl2.TabPages[1];
         }
 
+        private void GetObjectType()
+        {
+            Object_Type_comboBox.DataSource = Oracle.Get_object_type(Login_Form.conn);
+        }
         private void GetUsers()
         {
             user_comboBox.DataSource = Oracle.GetAllUsers(Login_Form.conn);
@@ -50,7 +54,7 @@ namespace antbm_do_an
             // Select
             DataTable ret = Oracle.GetAllPriv(Login_Form.conn, username);
             //DataTable ret2 = Oracle.GetRemain_One_User(Login_Form.conn, username, "SELECT");
-            Priv_Preprocessing(ret);
+            //Priv_Preprocessing(ret);
             Select_User_dataGridView1.DataSource = ret;
 
             // ROLE
@@ -69,7 +73,8 @@ namespace antbm_do_an
 
             // Select
             DataTable ret = Oracle.GetAllPriv(Login_Form.conn, role);
-            Priv_Preprocessing(ret);
+            ret.Columns.Remove("WITH GRANT OPTION");
+            //Priv_Preprocessing(ret);
             Select_User_dataGridView1.DataSource = ret;
 
 
@@ -302,7 +307,16 @@ namespace antbm_do_an
             }
         }
 
+        private void Chon_Type_button_Click(object sender, EventArgs e)
+        {
+            Object_dataGridView.DataSource = Oracle.Get_Object(Login_Form.conn, Object_Type_comboBox.Text);
+        }
 
+        private void CreateUserRole_button_Click(object sender, EventArgs e)
+        {
+            FormCreateUserRole temp = new FormCreateUserRole(this);
+            temp.Show();
+        }
     }
 
 

@@ -34,6 +34,12 @@ namespace antbm_do_an
             dr = const_dt.NewRow();
             dr["PRIV TYPE"] = "INSERT";
             const_dt.Rows.Add(dr);
+            if (MainForm.is_user)
+            {
+                dr = const_dt.NewRow();
+                dr["PRIV TYPE"] = "ROLE";
+                const_dt.Rows.Add(dr);
+            }
             InitializeComponent();
 
             Priv_Type_datagridview.DataSource = const_dt;
@@ -48,33 +54,50 @@ namespace antbm_do_an
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string priv_type = Priv_Type_datagridview.Rows[e.RowIndex].Cells[0].Value.ToString();
-            //Choose_Table chon_bang = new Choose_Table(conn);
-            if(priv_type == "SELECT")
-            {
-                Choose_Table chon_bang = new Choose_Table(MainForm,priv_type);
-                chon_bang.Show();
-            }
-            else if (priv_type == "UPDATE")
-            {
-                Choose_Table chon_bang = new Choose_Table(MainForm, priv_type);
-                chon_bang.Show();
+            //try
+            //{
+                string priv_type = Priv_Type_datagridview.Rows[e.RowIndex].Cells[0].Value.ToString();
+                //Choose_Table chon_bang = new Choose_Table(conn);
+                if (priv_type == "SELECT")
+                {
+                    Choose_Table chon_bang = new Choose_Table(MainForm, priv_type);
+                    chon_bang.Show();
+                    return;
+                }
+                if (priv_type == "UPDATE")
+                {
+                    Choose_Table chon_bang = new Choose_Table(MainForm, priv_type);
+                    chon_bang.Show();
+                    return;
 
-            }
-            else if (priv_type == "INSERT")
-            {
-                Choose_Priv chon_priv = new Choose_Priv(MainForm, priv_type);
-                chon_priv.Show();
-            }
-            else if (priv_type == "DELETE")
-            {
-                Choose_Table chon_priv = new Choose_Table(MainForm, priv_type);
-                chon_priv.Show();
-            }
-            else
-            {
-                MessageBox.Show("LỖI!!");
-            }
+                }
+                if (priv_type == "INSERT")
+                {
+                    Choose_Priv chon_priv = new Choose_Priv(MainForm, priv_type);
+                    chon_priv.Show();
+                    return;
+                    // mo cai thu muc len
+                }
+                if (priv_type == "DELETE")
+                {
+                    Choose_Priv chon_priv = new Choose_Priv(MainForm, priv_type);
+                    chon_priv.Show();
+                    return;
+
+                }
+                if(priv_type == "ROLE")
+                {
+                    Choose_Priv chon_priv = new Choose_Priv(MainForm, priv_type);
+                    chon_priv.Show();
+                    return;
+                }
+            MessageBox.Show("LỖI!!");
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            
 
         }
     }
