@@ -34,11 +34,11 @@ namespace antbm_do_an
         {
             Object_Type_comboBox.DataSource = Oracle.Get_object_type(Login_Form.conn);
         }
-        private void GetUsers()
+        public void GetUsers()
         {
             user_comboBox.DataSource = Oracle.GetAllUsers(Login_Form.conn);
         }
-        private void GetRoles()
+        public void GetRoles()
         {
             role_comboBox.DataSource = Oracle.GetAllRoles(Login_Form.conn);
         }

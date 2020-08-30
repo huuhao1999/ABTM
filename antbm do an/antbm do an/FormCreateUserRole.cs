@@ -12,10 +12,10 @@ namespace antbm_do_an
 {
     public partial class FormCreateUserRole : Form
     {
-        public OracleConnection conn;
-        public FormCreateUserRole(ChucNang_form Mainform )
+        public ChucNang_form MainForm;
+        public FormCreateUserRole(ChucNang_form form )
         {
-            conn = Mainform.Login_Form.conn;
+            MainForm = form;
             InitializeComponent();
         }
 
@@ -23,8 +23,9 @@ namespace antbm_do_an
         {
             try
             {
-                Oracle.CreateUser(conn, UserName_textBox.Text, Password_textBox.Text);
+                Oracle.CreateUser(MainForm.Login_Form.conn, UserName_textBox.Text, Password_textBox.Text);
                 MessageBox.Show("ĐA TAO USER " + UserName_textBox.Text + " THANH CONG!!", "Succeed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MainForm.GetUsers();
                 this.Close();
             }
             catch (Exception ex)
@@ -37,8 +38,9 @@ namespace antbm_do_an
         {
             try
             {
-                Oracle.CreateRole(conn, Role_name_textBox.Text, Role_password_textbox.Text);
+                Oracle.CreateRole(MainForm.Login_Form.conn, Role_name_textBox.Text, Role_password_textbox.Text);
                 MessageBox.Show("ĐA TAO ROLE " + Role_name_textBox.Text + " THANH CONG!!", "Succeed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MainForm.GetRoles();
                 this.Close();
             }
             catch (Exception ex)
