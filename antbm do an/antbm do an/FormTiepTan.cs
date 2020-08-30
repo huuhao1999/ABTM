@@ -81,6 +81,62 @@ namespace antbm_do_an
                     TiepTan.runSQL(conn, sql);
 
                 }
+            }
+            if (col == 4)
+            {
+                if (dataGridView1.Columns[col].Name.ToUpper() == "SDT")
+                {
+                    string trieuchungUpdate = dataGridView1.SelectedCells[0].Value.ToString();
+                    string mabenhnhan = dataGridView1.Rows[row].Cells[0].Value.ToString();
+
+                    string sql = "UPDATE DBA_USER.BENH_NHAN SET SDT = '" + trieuchungUpdate + "' WHERE MABENHNHAN=" + mabenhnhan;
+                    Console.Write(sql);
+                    MessageBox.Show("Cập nhật thành công");
+                   TiepTan.runSQL(conn, sql);
+
+                }
+            }
+            if (col == 3)
+            {
+                if (dataGridView1.Columns[col].Name.ToUpper() == "DIACHILIENLAC")
+                {
+                    string trieuchungUpdate = dataGridView1.SelectedCells[0].Value.ToString();
+                    string mabenhnhan = dataGridView1.Rows[row].Cells[0].Value.ToString();
+
+                    string sql = "UPDATE DBA_USER.BENH_NHAN SET DIACHILIENLAC = '" + trieuchungUpdate + "' WHERE MABENHNHAN=" + mabenhnhan;
+                    Console.Write(sql);
+                    MessageBox.Show("Cập nhật thành công");
+                    TiepTan.runSQL(conn, sql);
+
+                }
+            }
+            if (col == 2)
+            {
+                if (dataGridView1.Columns[col].Name.ToUpper() == "NAMSINH")
+                {
+                    string trieuchungUpdate = dataGridView1.SelectedCells[0].Value.ToString();
+                    string mabenhnhan = dataGridView1.Rows[row].Cells[0].Value.ToString();
+
+                    string sql = "UPDATE DBA_USER.BENH_NHAN SET NAMSINH = '" + trieuchungUpdate + "' WHERE MABENHNHAN=" + mabenhnhan;
+                    Console.Write(sql);
+                    MessageBox.Show("Cập nhật thành công");
+                    TiepTan.runSQL(conn, sql);
+
+                }
+            }
+            if (col == 1)
+            {
+                if (dataGridView1.Columns[col].Name.ToUpper() == "TEN")
+                {
+                    string trieuchungUpdate = dataGridView1.SelectedCells[0].Value.ToString();
+                    string mabenhnhan = dataGridView1.Rows[row].Cells[0].Value.ToString();
+
+                    string sql = "UPDATE DBA_USER.BENH_NHAN SET TEN = '" + trieuchungUpdate + "' WHERE MABENHNHAN=" + mabenhnhan;
+                    Console.Write(sql);
+                    MessageBox.Show("Cập nhật thành công");
+                    TiepTan.runSQL(conn, sql);
+
+                }
             } 
 
         }

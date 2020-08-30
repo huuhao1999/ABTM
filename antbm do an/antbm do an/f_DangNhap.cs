@@ -40,13 +40,22 @@ namespace antbm_do_an
                 }
                 if (username.StartsWith("tt") == true)
                 {
-                    conn = Oracle.CreateDBConnection(username, password);
+                    conn = TiepTan.CreateDBConnection(username, password);
+                    try
+                    { 
+                   // conn.Open();
                     FormTiepTan tieptan = new FormTiepTan(this);
                     tieptan.Show();
+                     }
+                    catch
+                    {
+                        MessageBox.Show("Đăng nhập thất bại!");
+                    }
                 }
                 if (username.StartsWith("kt") == true)
                 {
                     conn = Oracle.CreateDBConnection(username, password);
+                    conn.Open();
                     FormKeToan ketoan = new FormKeToan(this);
                     ketoan.Show();
                 }
