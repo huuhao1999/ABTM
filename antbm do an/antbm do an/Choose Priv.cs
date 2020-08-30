@@ -38,6 +38,7 @@ namespace antbm_do_an
                 DataTable Priv_user = Oracle.GetPriv_One_User_2(MainForm.Login_Form.conn, MainForm.username, Priv_Type, name_without_owner);
                 if (Priv_Type == "SELECT")
                     Select_Priv_Preprocessing(Priv_user);
+
                 foreach (DataRow dr in Priv_user.Rows)
                 {
                     foreach (DataRow dr1 in Col.Rows)
@@ -170,7 +171,22 @@ namespace antbm_do_an
                 }
             }
         }
+        public void Update_Priv_PreProcessing(DataTable Update_Priv)
+        {
+            //int Remain_select_priv_count = Remain_Select_Priv.Rows.Count;
+            string sep = "_" + MainForm.username.ToUpper() + "_VIEW";
 
+            // XỬ LÍ TÊN
+            foreach (DataRow dr in Update_Priv.Rows)
+            {
+                if (dr["OBJECT_NAME"].ToString().Contains(sep) == true)
+                {
+                    string[] temp = dr["OBJECT_NAME"].ToString().Split(new[] { sep }, StringSplitOptions.None);
+                    //MessageBox.Show(temp[0]);
+                    dr["OBJECT_NAME"] = temp[0];
+                }
+            }
+        }
         private void Priv_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
