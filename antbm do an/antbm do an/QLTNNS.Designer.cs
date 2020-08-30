@@ -70,6 +70,7 @@
             this.cbbView.Name = "cbbView";
             this.cbbView.Size = new System.Drawing.Size(146, 21);
             this.cbbView.TabIndex = 4;
+            this.cbbView.SelectedValueChanged += new System.EventHandler(this.cbbView_SelectedValueChanged);
             // 
             // lblView
             // 

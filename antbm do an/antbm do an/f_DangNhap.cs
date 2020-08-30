@@ -122,6 +122,21 @@ namespace antbm_do_an
                         MessageBox.Show("Đăng nhập thất bại!");
                     }
                 }
+                if (username.StartsWith("ql003") == true)
+                {
+                    conn = QuanLy.CreateDBConnection(username, password);
+                    try
+                    {
+                        conn.Open();
+                        QLCM f_qlcm = new QLCM(this);
+                        f_qlcm.Show();
+                        //this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Đăng nhập thất bại!");
+                    }
+                }
             }
             catch(Exception er)
             {

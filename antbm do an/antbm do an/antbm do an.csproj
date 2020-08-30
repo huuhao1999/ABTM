@@ -53,7 +53,7 @@
     </Compile>
     <Compile Include="FormTaiVu.Designer.cs">
       <DependentUpon>FormTaiVu.cs</DependentUpon>
-      </Compile>
+    </Compile>
     <Compile Include="FormCreateUserRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +71,12 @@
     </Compile>
     <Compile Include="FormQuanLiTaiVu.Designer.cs">
       <DependentUpon>FormQuanLiTaiVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QLCM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QLCM.Designer.cs">
+      <DependentUpon>QLCM.cs</DependentUpon>
     </Compile>
     <Compile Include="QLTNNS.cs">
       <SubType>Form</SubType>
@@ -186,6 +192,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QLCM.resx">
+      <DependentUpon>QLCM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QLTNNS.resx">
       <DependentUpon>QLTNNS.cs</DependentUpon>
     </EmbeddedResource>

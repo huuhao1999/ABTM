@@ -171,6 +171,22 @@ namespace antbm_do_an
             }
         }
 
+
+        private void cbbView_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                String Utable = this.cbbView.SelectedItem.ToString();
+                tablename = Utable;
+                dgvData.DataSource = QuanLy.getUpdateTable(conn, Utable);
+                dgvData.ReadOnly = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void cbbUpdate_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -191,7 +207,6 @@ namespace antbm_do_an
         {
 
         }
-
 
     }
 }
