@@ -41,6 +41,7 @@ namespace antbm_do_an
                 if (username.StartsWith("tt") == true)
                 {
                     conn = TiepTan.CreateDBConnection(username, password);
+                    conn.Open();
                     FormTiepTan tieptan = new FormTiepTan(this);
                     tieptan.Show();
                 }
