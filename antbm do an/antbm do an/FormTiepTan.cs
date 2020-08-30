@@ -22,7 +22,7 @@ namespace antbm_do_an
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string mabenhnhan = textBox1.Text.ToString();
+            int mabenhnhan = Convert.ToInt32(textBox1.Text);
             TiepTan.getBenhNhan(conn, mabenhnhan);
         }
 
