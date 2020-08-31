@@ -65,6 +65,7 @@ namespace antbm_do_an
                 {
                     dgvData.ReadOnly = true;
                 }
+                else dgvData.ReadOnly = false;
             }
             catch (Exception ex)
             {
@@ -210,6 +211,7 @@ namespace antbm_do_an
             {
                 String Utable = this.cbbView.SelectedItem.ToString();
                 tablename = Utable;
+                deleteTable = Utable;
                 dgvData.DataSource = QuanLy.getUpdateTable(conn, Utable);
                 dgvData.ReadOnly = true;
             }

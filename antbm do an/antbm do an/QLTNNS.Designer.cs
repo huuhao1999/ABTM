@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInsertRecord = new System.Windows.Forms.Button();
             this.btnDeleteRecord = new System.Windows.Forms.Button();
             this.cbbView = new System.Windows.Forms.ComboBox();
             this.lblView = new System.Windows.Forms.Label();
             this.lblUpdate = new System.Windows.Forms.Label();
             this.cbbUpdate = new System.Windows.Forms.ComboBox();
             this.dgvData = new System.Windows.Forms.DataGridView();
-            this.btnInsertRecord = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +54,16 @@
             this.panel1.Size = new System.Drawing.Size(738, 426);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnInsertRecord
+            // 
+            this.btnInsertRecord.Location = new System.Drawing.Point(297, 17);
+            this.btnInsertRecord.Name = "btnInsertRecord";
+            this.btnInsertRecord.Size = new System.Drawing.Size(131, 23);
+            this.btnInsertRecord.TabIndex = 6;
+            this.btnInsertRecord.Text = "Thêm dữ liệu";
+            this.btnInsertRecord.UseVisualStyleBackColor = true;
+            this.btnInsertRecord.Click += new System.EventHandler(this.btnInsertRecord_Click);
             // 
             // btnDeleteRecord
             // 
@@ -111,16 +121,6 @@
             this.dgvData.TabIndex = 0;
             this.dgvData.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvData_CellMouseClick);
             this.dgvData.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvData_CellValueChanged);
-            // 
-            // btnInsertRecord
-            // 
-            this.btnInsertRecord.Location = new System.Drawing.Point(297, 17);
-            this.btnInsertRecord.Name = "btnInsertRecord";
-            this.btnInsertRecord.Size = new System.Drawing.Size(131, 23);
-            this.btnInsertRecord.TabIndex = 6;
-            this.btnInsertRecord.Text = "Thêm dữ liệu";
-            this.btnInsertRecord.UseVisualStyleBackColor = true;
-            this.btnInsertRecord.Click += new System.EventHandler(this.btnInsertRecord_Click);
             // 
             // QLTNNS
             // 

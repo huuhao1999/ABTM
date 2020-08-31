@@ -16,7 +16,7 @@ namespace antbm_do_an
 
         public static OracleConnection CreateDBConnection(string username, string password)
         {
-            string host = "localhost";
+            string host = "192.168.137.1";
             int port = 1521;
             string sid = "xe";
             return GetDBConnection(host, port, sid, username, password);
@@ -41,6 +41,10 @@ namespace antbm_do_an
             if (a == "PHONG_BAN")
             {
                 a = a + " ORDER BY MAPB";
+            }
+            if(a == "LUONG")
+            {
+                a = "ENCRYPTED_" + a;
             }
             string sql = "SELECT * FROM DBA_USER." + a;
             OracleCommand cmd = new OracleCommand(sql, conn);
